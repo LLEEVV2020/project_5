@@ -1,0 +1,27 @@
+// @include font-face("Muller", "../fonts/MullerRegular", 400, normal);
+//@include font-face("Bodoni72c", "Bodoni72c", 400, normal);
+
+@font-face {
+	font-family: ManRegular;
+	src: url(../fonts/ManropeRegular.ttf);
+}
+
+@font-face {
+	font-family: ManLight;
+	src: url(../fonts/ManropeLight.ttf);
+}
+
+@font-face {
+	font-family: ManMedium;
+	src: url(../fonts/ManropeMedium.ttf);
+}
+
+@font-face {
+	font-family: ManBold;
+	src: url(../fonts/ManropeBold.ttf);
+}
+
+@font-face {
+	font-family: ManSemiBold;
+	src: url(../fonts/ManropeSemiBold.ttf);
+}
