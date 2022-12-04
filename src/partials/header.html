@@ -1,19 +1,35 @@
+<div class="seats-10-00"></div>
+
 <header class="header">
 
   <a class="header-logo" href="#"></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+  integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
 
 
   <div class="surprise">
 
     <h2>А вот <br>
       и сюрприз!</h2>
-      <p>Предъявите этот QR-код сотруднику <br>
-        на точке выдачи подарков<br>
-        в кафе Пятёрочка и Пакет</p>
+    <p>Предъявите этот QR-код сотруднику <br>
+    на точке выдачи подарков<br>
+    в кафе Пятёрочка и Пакет</p>
 
-        <img src="img/qr-code.png" alt="">
+        <img id="imgElem" src="img/qr-code.png" alt="">
 
   </div>
+
+  <script>
+
+    let baseStr64="iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAYAAAA49ahaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARnSURBVHhe7ZCBaiw5DATv/386pwwT8JYbtYVG2RfYgorB3ZIn+1/w9Zs6XJ85Jaoz6f2mDqd0uD5zSlRn0vtNHU7pcH3mlKjOpPebOpzS4frMKVGdSe8398sneXo/91Hi8i5qf5z75ZM8vZ/7KHF5F7U/zv3ySZ7ez32UuLyL2h/nfvkkT+/nPkpc3kXtj3O/XGHuJH8tdxKVx7lfrjB3kr+WO4nK49wvV5g7yV/LnUTlce6XK8yd5K/lTqLyOPfLFeZO0s0J+5RUcydReZz75QpzJ+nmhH1KqrmTqDzO/XKFuZN0c8I+JdXcSVQe5365wtxJujlhn5Jq7iQqj3O/XGHuJNXcSZ7OnUTlce6XK8ydpJo7ydO5k6g8zv1yhbmTVHMneTp3EpXHuV+uMHeSau4kT+dOovI498sncftdTqb7VdT+OPfLJ3H7XU6m+1XU/jj3yydx+11OpvtV1P4498sncftdTqb7VdT+OF8vpyW/nU97v6nDKclv59Peb+pwSvLb+bT3mzqckvx2Pu315vX3jaiPWnH5v8jnRx3g86MO8PlRB4jvzD+aeVeHmsl0qJmOJ0QvH2Le1aFmMh1qpuMJ0cuHmHd1qJlMh5rpeEL08iHmXR1qJtOhZjqecNZaUA9lkmo+rUPNZF4z198CalEmqebTOtRM5jVz/S2gFmWSaj6tQ81kXjPX3wJqUSap5tM61EzmNXP9TVCDq0R1VonqrDpcnzkl3fwb+9VcQonqrBLVWXW4PnNKuvk39qu5hBLVWSWqs+pwfeaUdPNv7FdzCSWqs0pUZ9Xh+swp6ebfxP1riU5TfY/9rkR1MhVxr8s/TlN9j/2uRHUyFXGvyz9OU32P/a5EdTIVca/LP05TfY/9rkR1MhX2vzhZkuHmp/N3YL+i+9Fufjp/B/Yruh/t5qfzd2C/ovvRbn46fwdv/wr+KE7icsJ+VaLyz49alKj886MWJSr//KhFicrjfL2ctorasUpcXoX7qCLudXnKKmrHKnF5Fe6jirjX5SmrqB2rxOVVuI8q4l6Xp6yidqwSl1fhPqqIe1/q4PZ38y7c3/XeuV8+idvfzbtwf9d75375JG5/N+/C/V3vnfvlk7j93bwL93e9d+6XK8ydpJpTMp07TubjPi8xd5JqTsl07jiZj/u8xNxJqjkl07njZD7u8xJzJ6nmlEznjpP5uM9LzJ2kmxP2qxLVyTwhevkQcyfp5oT9qkR1Mk+IXj7E3Em6OWG/KlGdzBOilw8xd5JuTtivSlQn84To5UPMnaSaU4fru3yCeCd/lLmTVHPqcH2XTxDv5I8yd5JqTh2u7/IJ4p38UeZOUs2pw/VdPkG8M/todz/nuzrUzOoJ0asPVeju53xXh5pZPSF69aEK3f2c7+pQM6snRK8+VKG7n/NdHWpm9YTo6eEpiepkEpeTap+czMf9a2laojqZxOWk2icn83H/WpqWqE4mcTmp9snJfNy/lqYlqpNJXE6qfXIyX9/6wfD19T9MPuHoJo3kEAAAAABJRU5ErkJggg==";
+    imgElem.setAttribute('src', "data:image/jpg;base64," + baseStr64);
+    
+  </script>
 
 
   <div class="waitingfor">
