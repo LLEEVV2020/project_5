@@ -23,7 +23,7 @@
     width: 100px;
     height: 100px;
     @media (min-width: (550px)) {
-      display: none;
+      //display: none;
     }
   }
   &::before{
@@ -40,6 +40,7 @@
     height: 150px;
   }
 
+
 }
 .header-logo{
   width: 108px;
@@ -55,10 +56,23 @@ h2{
   font-weight: 900;
   line-height: 1.15;
   font-size: 26px;
+  letter-spacing: .03em;
 }
 p{
   font-weight: 500;
 }
+
+
+.waitingfor, .surprise,
+.findout, .add{
+  text-align: center;
+  margin-bottom: 50px;
+  h2{
+    margin-bottom: 10px;
+  }
+
+}
+
 
 .surprise{
 
@@ -68,11 +82,109 @@ p{
   }
 }
 
-.waitingfor, .surprise{
-  text-align: center;
+.findout{
+  position: relative;
   margin-bottom: 50px;
-  h2{
-    margin-bottom: 10px;
+  p{
+    position: relative;
+    margin-bottom: 59px;
+  }
+  .btn{
+    position: relative;
+  }
+}
+
+.videoGift-wrapper{
+  position: relative;
+  width: 224.17px;
+  height: 224.17px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.videoGift{
+  width: 224.17px;
+  height: 224.17px;
+  border-radius: 64.0476px;
+
+}
+.videoGiftImg{
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(60%, -52%);
+}
+
+.b2, .b3{
+  position: absolute;
+  left: 0;
+}
+.b2{
+  top: 25px;
+} 
+.b3{
+  top: 300px;
+}
+.b1{
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+.btn{
+  width: 267px;
+  height: 56px;
+  padding: 0px 16px;
+  background: #0075FF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.add{
+  text-align: center;
+  margin-bottom: 57px;
+  
+  .add-card{
+    width: 327px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    img{
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
   }
 
+
+}
+
+footer{
+  padding: 20px 0 63px;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url(../img/footer-bg.png);
+    width: 100%;
+    height: 50px;
+  }
+  .footer-container{
+    width: 327px;
+    margin: 0 auto;
+  }
+  .header-logo{
+    margin-left: 0;
+  }
 }
