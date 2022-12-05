@@ -11,15 +11,26 @@
 }
 
 .site-container{
-  max-width: 375px;
-  min-height: 100vh;
+  max-width: 442px;
+    width: 100%;
+  min-height: 629px;
   margin: 0 auto;
   position: relative;
+
+
+}
+header{
+  padding-top: 15px;
+  position: relative;
+}
+
+.header-decorative{
+
 
   &::before, &::after{
     content: "";
     position: absolute;
-    top: 0;
+    top: 16px;
     width: 100px;
     height: 100px;
     @media (min-width: (550px)) {
@@ -39,9 +50,8 @@
     transform: translateY(-73px);
     height: 150px;
   }
-
-
 }
+
 .header-logo{
   width: 108px;
   height: 32px;
@@ -49,7 +59,6 @@
   background-size: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 15px;
   margin-bottom: 29px;
 }
 h2{
@@ -75,6 +84,13 @@ p{
 
 
 .surprise{
+
+  .surprise-img{
+    border-radius: 20px;
+    background: #fff;
+    padding: 18px;
+    display: inline-block;
+  }
 
 
   p{
@@ -120,7 +136,7 @@ p{
 }
 .b2{
   top: 25px;
-} 
+}
 .b3{
   top: 300px;
 }
@@ -149,7 +165,7 @@ p{
 .add{
   text-align: center;
   margin-bottom: 57px;
-  
+
   .add-card{
     width: 327px;
     border: 3px solid rgba(255, 255, 255, 0.25);
