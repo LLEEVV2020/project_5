@@ -1,0 +1,210 @@
+<style>
+
+.word {
+  margin: 0 auto;
+  width: 325px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container_word{
+  position: relative;
+}
+.word_place {
+  width: 57px;
+  height: 65px;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+}
+.word_place.active{
+  background: #58BD22
+}
+.letters{
+  margin-top: 40px;
+  height: 120px;
+}
+
+.letter{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 40px;
+  height: 41px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+}
+.letter1{
+  background-image: url(img/svg/k.svg);
+  bottom: 80px;
+  left: 30px;
+}
+.letter2{
+  background-image: url(img/svg/e.svg);
+  bottom: 100px;
+  left: 40%;
+}
+.letter3{
+  background-image: url(img/svg/p.svg);
+  bottom: 80px;
+  right: 35px;
+}
+.letter4{
+  background-image: url(img/svg/a.svg);
+  bottom: 10px;
+  left: 25%;
+}
+.letter5{
+  background-image: url(img/svg/t.svg);
+  bottom: 15px;
+  right: 24%;
+}
+
+.banner5 {
+  display: none;
+  color: black;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 295px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner5.active {
+  display: flex;
+}
+</style>
+
+<div style="text-align: center;">
+  <h2>Составь слово из предложенных букв</h2>
+  <p>Перетащи каждую букву в свою ячейку</p>
+</div>
+<br>
+
+
+
+<div class="container_word">
+  <div class="word">
+    <div class="word_place" data-num="0"></div>
+    <div class="word_place" data-num="1"></div>
+    <div class="word_place" data-num="2"></div>
+    <div class="word_place" data-num="3"></div>
+    <div class="word_place" data-num="4"></div>
+  </div>
+  <div class="letters">
+    <div class="letter letter1" data-num2="2"></div>
+    <div class="letter letter2" data-num2="3"></div>
+    <div class="letter letter3" data-num2="0"></div>
+    <div class="letter letter4" data-num2="1"></div>
+    <div class="letter letter5" data-num2="4"></div>
+  </div>
+  <div class="banner5">Game Over</div>
+</div>
+
+<script>
+
+
+let wrapper = document.querySelector('.container_word');
+let empty = document.querySelectorAll('.word_place');
+let drag = document.querySelectorAll('.letter');
+let boxDrag = document.querySelector('.letters');
+
+
+
+for (i = 0; i < drag.length; i++) {
+  drag[i].addEventListener('touchmove', dragMove);
+}
+
+for (j = 0; j < drag.length; j++) {
+  drag[j].addEventListener('touchend', dragDrop);
+}
+
+let itemAppend;
+
+function dragMove(event) {
+  event.preventDefault();
+
+  let drag = this;
+
+  let touch = event.targetTouches[0];
+  drag.style.top = `${touch.pageY - wrapper.offsetTop - 20}.px`;
+  drag.style.left = `${touch.pageX - wrapper.offsetLeft - 20}.px`;
+
+  empty.forEach(item => {
+    if (drag.getBoundingClientRect().top + 20 < item.getBoundingClientRect().bottom &&
+      drag.getBoundingClientRect().right - 20 > item.getBoundingClientRect().left &&
+      drag.getBoundingClientRect().bottom - 20 > item.getBoundingClientRect().top &&
+      drag.getBoundingClientRect().left + 20 < item.getBoundingClientRect().right && drag.getAttribute('data-num2') == item.getAttribute('data-num')) {
+      item.classList.add('active');
+      itemAppend = item;
+    }
+    else {
+      item.classList.remove('active');
+    }
+
+  })
+}
+
+function dragDrop() {
+  if (itemAppend && itemAppend.classList.contains('active')) {
+    itemAppend.append(this);
+    this.style.top = `${itemAppend.offsetTop + 13}px`;
+    this.style.left = `${itemAppend.offsetLeft + 8}px`;
+    empty.forEach(elem => {
+      elem.classList.remove('active');
+    })
+    gameEnd();
+  }
+  else {
+    this.style.top = 'inherit';
+    if (this.getAttribute('data-num2') == 2) {
+      this.style.bottom = '80px';
+      this.style.left = '30px';
+    }
+    if (this.getAttribute('data-num2') == 0) {
+      this.style.bottom = '80px';
+      this.style.right = '35px';
+      this.style.left = 'inherit'
+    }
+    if (this.getAttribute('data-num2') == 1) {
+      this.style.bottom = '10px';
+      this.style.left = '25%';
+    }
+    if (this.getAttribute('data-num2') == 3) {
+      this.style.bottom = '100px';
+      this.style.left = '40%';
+    }
+    if (this.getAttribute('data-num2') == 4) {
+      this.style.bottom = '15px';
+      this.style.right = '24%';
+      this.style.left = 'inherit'
+    }
+  }
+}
+
+function gameEnd(){
+  let k = document.querySelector('.letter1');
+  let e = document.querySelector('.letter2');
+  let p = document.querySelector('.letter3');
+  let a = document.querySelector('.letter4');
+  let t = document.querySelector('.letter5');
+
+  if(k.parentNode.classList.contains('word_place') &&
+     e.parentNode.classList.contains('word_place') &&
+     p.parentNode.classList.contains('word_place') &&
+     a.parentNode.classList.contains('word_place') &&
+     t.parentNode.classList.contains('word_place') ){
+      let banner = document.querySelector('.banner5');
+      banner.classList.add('active');
+     }
+
+}
+
+</script>
