@@ -182,7 +182,7 @@ const scriptsBackend = () => {
     .pipe(webpackStream({
       mode: 'development',
       output: {
-        filename: 'main.js',
+        filename: 'main.js?gggff',
       },
       module: {
         rules: [{
