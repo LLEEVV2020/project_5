@@ -2,16 +2,35 @@
 <html lang="ru" class="page">
 
 @include('partials/head.html')
+<style>
+  .main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main a{
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+</style>
 
 <body class="page__body">
   <div class="site-container">
 
 
   @include('partials/preloader.html')
-    @include('partials/section1.html')
 
     <main class="main">
+      <a href="main.html">Главная экран</a>
+      <a href="1.html">Первая игра</a>
 
+      <a href="1modal.html">Модалка первой игры</a>
+      <a href="2modal.html">Модалка второй игры</a>
+      <a href="3modal.html">Модалка третьей игры</a>
+      <a href="4modal.html">Модалка четвёртой игры</a>
+      <a href="5modal.html">Модалка пятой игры</a>
     </main>
 
     @include('partials/foot.html')

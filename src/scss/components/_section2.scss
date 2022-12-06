@@ -1,0 +1,73 @@
+.findout{
+
+}
+
+.relative{
+  position: relative;
+}
+
+.wrapper-modal1{
+  display: flex;
+}
+
+.modal1{
+  background: rgba(255, 255, 255, 0.7);
+  mix-blend-mode: normal;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+
+  font-weight: 600;
+font-size: 15px;
+line-height: 130%;
+/* or 19px */
+
+text-align: center;
+
+color: #072845;
+
+}
+
+.wrapper-modal1{
+  z-index: 1;
+  position: relative;
+  align-items: flex-end;
+  gap: 12px;
+  justify-content: center;
+
+}
+.modal1{
+  width: 263px;
+  padding: 12px 16px;
+  div{
+    margin-bottom: 10px;
+  }
+}
+.btr2{
+  width: 231px;
+  height: 40px;
+}
+
+
+.modal-cart1{
+  width: 108px;
+  height: 126px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.modal-content1{
+  text-align: center;
+  max-width: 295px;
+  border-radius: 30px;
+  padding: 20px 24px 24px;
+  margin: 0 auto;
+  h2{
+    color: #072845;
+  }
+  p{
+    color: #072845;
+  }
+  .btn{
+    width: 100%;
+  }
+}
