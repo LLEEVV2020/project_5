@@ -60,6 +60,24 @@
 
 
 
+      <script>
+
+        const name1 = {
+          name1: 'bbbbbbbbbb',
+          age: 88
+        };
+
+        window.addEventListener('storage', (event) => console.log(event));
+        //localStorage.setItem('name1', name1);
+        localStorage.setItem('name1', JSON.stringify(name1));
+
+        console.log(localStorage.getItem('name1'));
+        console.log(JSON.parse(localStorage.getItem('name1')));
+
+        //localStorage.removeItem('user');
+        //localStorage.clear();
+
+      </script>
 
 
     <main class="main">
