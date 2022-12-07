@@ -134,8 +134,8 @@ function dragMove(event) {
   let drag = this;
 
   let touch = event.targetTouches[0];
-  drag.style.top = `${touch.pageY - wrapper.offsetTop - 20}.px`;
-  drag.style.left = `${touch.pageX - wrapper.offsetLeft - 20}.px`;
+  drag.style.top = `${touch.pageY - wrapper.offsetTop - 20}px`;
+  drag.style.left = `${touch.pageX - wrapper.offsetLeft - 20}px`;
 
   empty.forEach(item => {
     if (drag.getBoundingClientRect().top + 20 < item.getBoundingClientRect().bottom &&
