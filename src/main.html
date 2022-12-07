@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('partials/head.html')
+  <head>
+    @include('partials/head.html')
+  </head>
 
 <body class="page__body">
   <div class="site-container site-container-gray">
@@ -12,13 +14,41 @@
     @include('partials/section1.html')
 
     <main class="main">
-      <iframe src="1.html" width="468" height="460"  align="left">
-        Ваш браузер не поддерживает плавающие фреймы!
-     </iframe>
+
     </main>
     @include('partials/footer.html')
     @include('partials/foot.html')
 
+
+<script>
+
+let input_cifri = document.querySelector('.section1 .btn');
+
+
+input_cifri.addEventListener('click', function(event) {
+
+        let url1_paket = null;
+        const name1_paket = {
+          name1: 'ggff',
+          age: 3333,
+          url: url1_paket
+        };
+
+
+
+       // localStorage.setItem('url1_paket', JSON.stringify(name1_paket));
+
+        localStorage.removeItem('name1_paket');
+        localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+        //JSON.parse(localStorage.getItem('name1'));
+
+        //console.log(JSON.parse(localStorage.getItem('name1')));
+
+
+  //console.log(input_cifri);
+});
+
+</script>
 
     <!-- @include('html/h1.html') пример include -->
   </div>

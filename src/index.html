@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('partials/head.html')
+  <head>
+    @include('partials/head.html')
+  </head>
+
 <style>
-  .main{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .main a{
-      color: #FFF;
-      margin-bottom: 10px;
-    }
+iframe{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+body{
+  overflow: hidden;
+}
+
+
 </style>
 
 <body class="page__body">
@@ -22,31 +27,52 @@
 
   @include('partials/preloader.html')
 
-    <main class="main">
-      <a href="main.html">Главная экран</a>
-      <a href="1.html">Первая игра</a>
-      <a href="2.html">Вторая игра</a>
-      <a href="3.html">Третья игра</a>
-      <a href="4.html">Четвёртая игра</a>
-      <a href="5.html">Пятая игра</a>
-      <br>
-      <a href="1modal.html">Модалка первой игры</a>
-      <a href="2modal.html">Модалка второй игры</a>
-      <a href="3modal.html">Модалка третьей игры</a>
-      <a href="4modal.html">Модалка четвёртой игры</a>
-      <a href="5modal.html">Модалка пятой игры</a>
-      <br>
-
-
-
-      <a href="menu.html">Меню</a>
-      <a href="finish.html">Последняя странница</a>
-    </main>
+  <iframe class="iframe" src="main.html" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
 
     @include('partials/foot.html')
 
     <!-- @include('html/h1.html') пример include -->
   </div>
+
+  <script>
+ //console.log(localStorage.getItem('name1'));
+        //console.log(JSON.parse(localStorage.getItem('name1')));
+
+        //localStorage.removeItem('name1');
+    let iframe = document.querySelector('.iframe');
+
+
+window.addEventListener('storage', (event) => {
+
+  if(event.oldValue === null) {
+
+
+    if(event.key === "name1_paket"){
+
+      let new_value = JSON.parse(event.newValue);;
+
+
+
+      if(new_value.url === null){
+        iframe.setAttribute('src', "1.html");
+      }
+
+
+
+      console.log(event);
+
+
+    }
+
+  }
+
+
+});
+
+
+  </script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+  <head>
+    @include('partials/head.html')
+  </head>
 
-@include('partials/head.html')
 
 <body class="page__body">
   <div class="site-container">
@@ -62,17 +64,17 @@
 
       <script>
 
-        const name1 = {
+        const name1_paket = {
           name1: 'bbbbbbbbbb',
           age: 88
         };
 
-        window.addEventListener('storage', (event) => console.log(event));
+        //window.addEventListener('storage', (event) => console.log(event));
         //localStorage.setItem('name1', name1);
-        localStorage.setItem('name1', JSON.stringify(name1));
+       // localStorage.setItem('name1', JSON.stringify(name1));
 
-        console.log(localStorage.getItem('name1'));
-        console.log(JSON.parse(localStorage.getItem('name1')));
+        console.log(localStorage.getItem('name1_paket'));
+        //console.log(JSON.parse(localStorage.getItem('name1_paket')));
 
         //localStorage.removeItem('user');
         //localStorage.clear();
