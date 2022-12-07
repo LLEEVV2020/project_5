@@ -1,0 +1,160 @@
+<style>
+.actions {
+  text-align: center;
+}
+.ai {
+  background-image: url('img/svg/ai.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container-game {
+  margin: 0 auto;
+  width: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 275px;
+}
+.table{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  height: 275px;
+  background-image: url('img/svg/bg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cell {
+  background-color: transparent;
+  height: 84px;
+  width: 84px;
+}
+
+.player {
+  background-image: url('img/svg/Steps.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.banner3{
+  display: none;
+  color: black;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 295px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.banner3.active{
+  display: flex;
+}
+
+</style>
+
+<div class="container-game">
+  <div class="table">
+    <div class="cell" id="0" onclick="move(0, 'player')"></div>
+    <div class="cell" id="1" onclick="move(1, 'player')"></div>
+    <div class="cell" id="2" onclick="move(2, 'player')"></div>
+    <div class="cell" id="3" onclick="move(3, 'player')"></div>
+    <div class="cell" id="4" onclick="move(4, 'player')"></div>
+    <div class="cell" id="5" onclick="move(5, 'player')"></div>
+    <div class="cell" id="6" onclick="move(6, 'player')"></div>
+    <div class="cell" id="7" onclick="move(7, 'player')"></div>
+    <div class="cell" id="8" onclick="move(8, 'player')"></div>
+  </div>
+  <div class="banner3">Game Over</div>
+</div>
+
+<script>
+
+var t = new Array(9);
+
+
+
+function ai() {
+  setTimeout(function () {
+    var id = Math.floor(Math.random() * 9);
+    if(t[id] || aiWin(id)){
+      ai();
+    }
+    else{
+      move(id, 'ai');
+    }
+    //t[id] ? ai() : move(id, 'ai');
+  }, 500);
+
+}
+
+function checkEnd() {
+  if (t[0] == 'ai' && t[1] == 'ai' && t[2] == 'ai' || t[0] == 'player' && t[1] == 'player' && t[2] == 'player') return true;
+  if (t[3] == 'ai' && t[4] == 'ai' && t[5] == 'ai' || t[3] == 'player' && t[4] == 'player' && t[5] == 'player') return true;
+  if (t[6] == 'ai' && t[7] == 'ai' && t[8] == 'ai' || t[6] == 'player' && t[7] == 'player' && t[8] == 'player') return true;
+  if (t[0] == 'ai' && t[3] == 'ai' && t[6] == 'ai' || t[0] == 'player' && t[3] == 'player' && t[6] == 'player') return true;
+  if (t[1] == 'ai' && t[4] == 'ai' && t[7] == 'ai' || t[1] == 'player' && t[4] == 'player' && t[7] == 'player') return true;
+  if (t[2] == 'ai' && t[5] == 'ai' && t[8] == 'ai' || t[2] == 'player' && t[5] == 'player' && t[8] == 'player') return true;
+  if (t[0] == 'ai' && t[4] == 'ai' && t[8] == 'ai' || t[0] == 'player' && t[4] == 'player' && t[8] == 'player') return true;
+  if (t[2] == 'ai' && t[4] == 'ai' && t[6] == 'ai' || t[2] == 'player' && t[4] == 'player' && t[6] == 'player') return true;
+  if (t[0] && t[1] && t[2] && t[3] && t[4] && t[5] && t[6] && t[7] && t[8]) return true;
+}
+
+function aiWin(id){
+  if (t[0] == 'ai' && id == '1' && t[2] == 'ai' ) return true;
+  if (id == '0' && t[1] == 'ai' && t[2] == 'ai' ) return true;
+  if (t[0] == 'ai' && t[1] == 'ai' && id == '2' ) return true;
+
+  if (id == '3' && t[4] == 'ai' && t[5] == 'ai') return true;
+  if (t[3] == 'ai' && id == '4' && t[5] == 'ai') return true;
+  if (t[3] == 'ai' && t[4] == 'ai' && id == '5') return true;
+
+  if (id == '6' && t[7] == 'ai' && t[8] == 'ai') return true;
+  if (t[6] == 'ai' && id == '7' && t[8] == 'ai') return true;
+  if (t[6] == 'ai' && t[7] == 'ai' && id == '8') return true;
+
+  if (id == '0' && t[3] == 'ai' && t[6] == 'ai') return true;
+  if (t[0] == 'ai' && id == '3' && t[6] == 'ai') return true;
+  if (t[0] == 'ai' && t[3] == 'ai' && id == '6') return true;
+
+  if (id == '1' && t[4] == 'ai' && t[7] == 'ai') return true;
+  if (t[1] == 'ai' && id == '4' && t[7] == 'ai') return true;
+  if (t[1] == 'ai' && t[4] == 'ai' && id == '7') return true;
+
+  if (id == '2' && t[5] == 'ai' && t[8] == 'ai') return true;
+  if (t[2] == 'ai' && id == '5' && t[8] == 'ai') return true;
+  if (t[2] == 'ai' && t[5] == 'ai' && id == '8') return true;
+
+  if (id == '0' && t[4] == 'ai' && t[8] == 'ai') return true;
+  if (t[0] == 'ai' && id == '4' && t[8] == 'ai') return true;
+  if (t[0] == 'ai' && t[4] == 'ai' && id == '8') return true;
+
+  if (id == '2' && t[4] == 'ai' && t[6] == 'ai') return true;
+  if (t[2] == 'ai' && id == '4' && t[6] == 'ai') return true;
+  if (t[2] == 'ai' && t[4] == 'ai' && id == '6') return true;
+}
+
+function move(id, role) {
+  if (t[id]) return false;
+  t[id] = role;
+  document.getElementById(id).className = 'cell ' + role;
+  !checkEnd() ? (role == 'player') ? ai() : null : reset()
+}
+
+let banner = document.querySelector('.banner3');
+
+function reset() {
+  setTimeout(function () {
+    banner.classList.add('active');
+  }, 500);
+}
+
+</script>
