@@ -27,17 +27,36 @@ color: #072845;
 
 }
 
+
+.dropstart-item{
+  cursor: pointer;
+}
 .wrapper-modal1{
   z-index: 1;
   position: relative;
   align-items: flex-end;
   gap: 12px;
   justify-content: center;
+  padding-top: 60px;
+
+  .dropstart {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 333px;
+    width: 100%;
+  }
+
+  .dropdown-menu{
+    bottom: 0 !important;
+    top: inherit !important;
+    right: 11px !important;
+  }
 
 }
 .modal1{
   width: 263px;
   padding: 12px 16px;
+
   div{
     margin-bottom: 10px;
   }

@@ -5,7 +5,7 @@
 
 position: relative;
 padding-bottom: 26px;
-min-height: 100vh;
+//min-height: 100vh;
 & > *{
   position: relative;
 }
@@ -42,6 +42,8 @@ min-height: 100vh;
 
     .btn{
       margin-bottom: 29px;
+      max-width: 307px;
+      width: 100%;
     }
 
 
@@ -113,4 +115,25 @@ margin-bottom: 16px;
     color: #fff;
     text-decoration: none;
   }
+}
+
+.form-check{
+  display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    .form-check-input{
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      box-shadow: none;
+
+
+      &:checked{
+        background-image: url(../img/check1.png);
+        background-color: transparent;
+      }
+    }
+
 }

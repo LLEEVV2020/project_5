@@ -1,0 +1,29 @@
+
+.menu1-img{
+  margin-bottom: 31px;
+  width: 303px ;
+  height: 172px;
+}
+.wrapper_cifri-input{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 42px;
+
+  .cifri-input{
+    border: none;
+    width: 65px;
+    height: 65px;
+    font-weight: 700;
+    font-size: 32px;
+    background: #FFFFFF;
+border: 1px solid rgba(255, 255, 255, 0.25);
+border-radius: 8px;
+
+text-align: center;
+
+    &:focus-visible {
+      outline: none;
+  }
+  }
+}

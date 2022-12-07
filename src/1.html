@@ -6,8 +6,60 @@
 <body class="page__body">
   <div class="site-container">
 
+    <div class="findout">
 
-    @include('partials/section2.html')
+      <header class="header header-flex">
+
+        <div class="panel-ball ball1">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+        <a class="header-logo" href="#"></a>
+
+
+      </header>
+
+      <img src="img/bg2.png" alt="" class="b2">
+      <img src="img/bg1.png" alt="" class="b1">
+
+      <h2 style="margin-bottom: 66px;">Собери <br>
+        пазл</h2>
+
+        @include('partials/game1.html')
+
+
+
+        <!-- Default dropstart button -->
+        <div class="wrapper-modal1">
+          <div class=" dropstart ">
+            <div class="dropstart-item"  data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="img/button.png" alt="">
+            </div>
+            <div class="dropdown-menu modal1">
+
+                <div>Передвигай изображения в клетки, чтобы собрать картинку</div>
+                <div  data-bs-toggle="dropdown" aria-expanded="false" href="1.html" class="btn btr2">Понятно</div>
+
+            </div>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
 
 
     <main class="main">

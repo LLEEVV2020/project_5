@@ -6,9 +6,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .container_word{
   position: relative;
+   max-width: 268px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 0;
 }
 .word_place {
   width: 57px;
@@ -21,8 +28,9 @@
   background: #58BD22
 }
 .letters{
-  margin-top: 40px;
-  height: 120px;
+
+    margin-top: 40px;
+    height: 133px;
 }
 
 .letter{
@@ -82,9 +90,11 @@
 }
 </style>
 
+
+
 <div style="text-align: center;">
-  <h2>Составь слово из предложенных букв</h2>
-  <p>Перетащи каждую букву в свою ячейку</p>
+  <h2>Составь слово <br> из предложенных <br> букв</h2>
+  <p>Перетащи каждую <br> букву в свою ячейку</p>
 </div>
 <br>
 
