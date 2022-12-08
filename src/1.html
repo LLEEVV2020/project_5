@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  <head>
-    @include('partials/head.html')
-  </head>
+
+<head>
+  @include('partials/head.html')
+</head>
 
 
 <body class="page__body">
@@ -33,53 +34,68 @@
       <h2 style="margin-bottom: 66px;">Собери <br>
         пазл</h2>
 
-        @include('partials/game1.html')
+      @include('partials/game1.html')
 
 
 
-        <!-- Default dropstart button -->
-        <div class="wrapper-modal1">
-          <div class=" dropstart ">
-            <div class="dropstart-item"  data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="img/button.png" alt="">
-            </div>
-            <div class="dropdown-menu modal1">
-
-                <div>Передвигай изображения в клетки, чтобы собрать картинку</div>
-                <div  data-bs-toggle="dropdown" aria-expanded="false" href="1.html" class="btn btr2">Понятно</div>
-
-            </div>
-            </ul>
+      <!-- Default dropstart button -->
+      <div class="wrapper-modal1">
+        <div class=" dropstart ">
+          <div class="dropstart-item" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/button.png" alt="">
           </div>
+          <div class="dropdown-menu modal1">
+
+            <div>Передвигай изображения в клетки, чтобы собрать картинку</div>
+            <div data-bs-toggle="dropdown" aria-expanded="false" href="1.html" class="btn btr2">Понятно</div>
+
+          </div>
+          </ul>
         </div>
-
-
-
-
-
-
       </div>
 
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content modal-content1">
+
+          <img class="modal-cart1" src="img/modal-cart1.png" alt="">
+
+          <h2>Отличное <br> начало
+          </h2>
+          <p>Теперь опция кешбэка 5% в Пятёрочке и Перекрёстке активирована</p>
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt="">
+            Следующее задание</button>
+
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-game-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch demo modal
+    </button>
 
 
-      <script>
+    <script>
 
-        const name1_paket = {
-          name1: 'bbbbbbbbbb',
-          age: 88
-        };
+      const name1_paket = {
+        name1: 'bbbbbbbbbb',
+        age: 88
+      };
 
-        //window.addEventListener('storage', (event) => console.log(event));
-        //localStorage.setItem('name1', name1);
-       // localStorage.setItem('name1', JSON.stringify(name1));
+      //window.addEventListener('storage', (event) => console.log(event));
+      //localStorage.setItem('name1', name1);
+      // localStorage.setItem('name1', JSON.stringify(name1));
 
-        console.log(localStorage.getItem('name1_paket'));
+      console.log(localStorage.getItem('name1_paket'));
         //console.log(JSON.parse(localStorage.getItem('name1_paket')));
 
         //localStorage.removeItem('user');
         //localStorage.clear();
 
-      </script>
+    </script>
 
 
     <main class="main">

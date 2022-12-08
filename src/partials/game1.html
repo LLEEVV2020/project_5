@@ -1,93 +1,84 @@
 <style>
+  .container_pazzle {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 150px;
+  }
 
-.container_pazzle {
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-bottom: 150px;
-}
-.pazzle{
-  width: 255px;
-  height: 255px;
-  background-image: url(img/svg/pazzle_bg.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-.pazzle_place{
- width: 127.5px;
- height: 127.5px;
-}
-.pazzle .pazzle_place:nth-child(1){
-  border-top-left-radius: 20px;
-}
-.pazzle .pazzle_place:nth-child(2){
-  border-top-right-radius: 20px;
-}
-.pazzle .pazzle_place:nth-child(3){
-  border-bottom-left-radius: 20px;
-}
-.pazzle .pazzle_place:nth-child(4){
-  border-bottom-right-radius: 20px;
-}
-.pazzle_place.active{
-  box-shadow: inset 0px 0px 3px 6px rgba(20, 120, 180, .2);
-}
-.pazzle_elems{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.pazzle_elem{
-  position: absolute;
-}
-.pazzle_elem1{
-  top: -30px;
-  left: 15px;
-}
-.pazzle_elem2{
-  top: -25px;
-  right: 0;
-}
-.pazzle_elem3{
-  bottom: -110px;
-  left: 60px;
-}
-.pazzle_elem4{
-  bottom: -120px;
-  right: 50px;
-}
+  .pazzle {
+    width: 255px;
+    height: 255px;
+    background-image: url(img/svg/pazzle_bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.banner1 {
-  display: none;
-  color: black;
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 295px;
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-}
+  .pazzle_place {
+    width: 127.5px;
+    height: 127.5px;
+  }
 
-.banner1.active {
-  display: flex;
-}
+  .pazzle .pazzle_place:nth-child(1) {
+    border-top-left-radius: 20px;
+  }
 
+  .pazzle .pazzle_place:nth-child(2) {
+    border-top-right-radius: 20px;
+  }
+
+  .pazzle .pazzle_place:nth-child(3) {
+    border-bottom-left-radius: 20px;
+  }
+
+  .pazzle .pazzle_place:nth-child(4) {
+    border-bottom-right-radius: 20px;
+  }
+
+  .pazzle_place.active {
+    box-shadow: inset 0px 0px 3px 6px rgba(20, 120, 180, .2);
+  }
+
+  .pazzle_elems {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .pazzle_elem {
+    position: absolute;
+  }
+
+  .pazzle_elem1 {
+    top: -30px;
+    left: 15px;
+  }
+
+  .pazzle_elem2 {
+    top: -25px;
+    right: 0;
+  }
+
+  .pazzle_elem3 {
+    bottom: -110px;
+    left: 60px;
+  }
+
+  .pazzle_elem4 {
+    bottom: -120px;
+    right: 50px;
+  }
 </style>
 
 <div class="container_pazzle">
@@ -103,141 +94,143 @@
     <img src="img/3.png" class="pazzle_elem pazzle_elem3" data-num2="4" alt="img">
     <img src="img/1.png" class="pazzle_elem pazzle_elem4" data-num2="1" alt="img">
   </div>
-  <div class="banner1">Game Over</div>
 </div>
 
 <script>
 
 
 
-let wrapper = document.querySelector('.container_pazzle');
-let empty = document.querySelectorAll('.pazzle_place');
-let drag = document.querySelectorAll('.pazzle_elem');
-let boxDrag = document.querySelector('.pazzle_elems');
+  let wrapper = document.querySelector('.container_pazzle');
+  let empty = document.querySelectorAll('.pazzle_place');
+  let drag = document.querySelectorAll('.pazzle_elem');
+  let boxDrag = document.querySelector('.pazzle_elems');
 
 
-for (i = 0; i < drag.length; i++) {
-  drag[i].addEventListener('touchmove', dragMove);
-}
+  for (i = 0; i < drag.length; i++) {
+    drag[i].addEventListener('touchmove', dragMove);
+  }
 
-for (j = 0; j < drag.length; j++) {
-  drag[0].addEventListener('touchend', dragDrop1);
-  drag[1].addEventListener('touchend', dragDrop2);
-  drag[2].addEventListener('touchend', dragDrop3);
-  drag[3].addEventListener('touchend', dragDrop4);
-}
+  for (j = 0; j < drag.length; j++) {
+    drag[0].addEventListener('touchend', dragDrop1);
+    drag[1].addEventListener('touchend', dragDrop2);
+    drag[2].addEventListener('touchend', dragDrop3);
+    drag[3].addEventListener('touchend', dragDrop4);
+  }
 
-let itemAppend;
+  let itemAppend;
 
-function dragMove(event) {
-  event.preventDefault();
+  function dragMove(event) {
+    event.preventDefault();
 
-  let drag = this;
+    let drag = this;
 
-  let touch = event.targetTouches[0];
-  drag.style.top = `${touch.pageY - wrapper.offsetTop - 84}px`;
-  drag.style.left = `${touch.pageX - wrapper.offsetLeft - 64}px`;
+    let touch = event.targetTouches[0];
+    drag.style.top = `${touch.pageY - wrapper.offsetTop - 84}px`;
+    drag.style.left = `${touch.pageX - wrapper.offsetLeft - 64}px`;
 
-  empty.forEach(item => {
-    if (drag.getBoundingClientRect().top + 104 < item.getBoundingClientRect().bottom &&
-      drag.getBoundingClientRect().right - 84 > item.getBoundingClientRect().left &&
-      drag.getBoundingClientRect().bottom - 104 > item.getBoundingClientRect().top &&
-      drag.getBoundingClientRect().left + 84 < item.getBoundingClientRect().right && drag.getAttribute('data-num2') == item.getAttribute('data-num')) {
-      item.classList.add('active');
-      itemAppend = item;
+    empty.forEach(item => {
+      if (drag.getBoundingClientRect().top + 104 < item.getBoundingClientRect().bottom &&
+        drag.getBoundingClientRect().right - 84 > item.getBoundingClientRect().left &&
+        drag.getBoundingClientRect().bottom - 104 > item.getBoundingClientRect().top &&
+        drag.getBoundingClientRect().left + 84 < item.getBoundingClientRect().right && drag.getAttribute('data-num2') == item.getAttribute('data-num')) {
+        item.classList.add('active');
+        itemAppend = item;
+      }
+      else {
+        item.classList.remove('active');
+      }
+
+    })
+
+  }
+
+  function dragDrop1() {
+    if (itemAppend && itemAppend.classList.contains('active')) {
+      itemAppend.append(this);
+      this.style.top = `${itemAppend.offsetTop}px`;
+      this.style.left = `${itemAppend.offsetLeft - 40}px`;
+      empty.forEach(elem => {
+        elem.classList.remove('active');
+      })
+      gameEnd();
     }
     else {
-      item.classList.remove('active');
+      this.style.top = '-30px';
+      this.style.left = '15px';
+
+    }
+  }
+  function dragDrop2() {
+    if (itemAppend && itemAppend.classList.contains('active')) {
+      itemAppend.append(this);
+      this.style.top = `${itemAppend.offsetTop}px`;
+      this.style.left = `${itemAppend.offsetLeft}px`;
+      empty.forEach(elem => {
+        elem.classList.remove('active');
+      })
+      gameEnd();
+    }
+    else {
+      this.style.top = '-25px';
+      this.style.right = '0px';
+      this.style.left = 'initial';
+    }
+  }
+
+  function dragDrop3() {
+    if (itemAppend && itemAppend.classList.contains('active')) {
+      itemAppend.append(this);
+      this.style.top = `${itemAppend.offsetTop - 40}px`;
+      this.style.left = `${itemAppend.offsetLeft}px`;
+      empty.forEach(elem => {
+        elem.classList.remove('active');
+      })
+      gameEnd();
+    }
+    else {
+      this.style.top = 'initial';
+      this.style.botom = '-110px';
+      this.style.left = '60px';
+    }
+  }
+
+  function dragDrop4() {
+    if (itemAppend && itemAppend.classList.contains('active')) {
+      itemAppend.append(this);
+      this.style.top = `${itemAppend.offsetTop}px`;
+      this.style.left = `${itemAppend.offsetLeft}px`;
+      empty.forEach(elem => {
+        elem.classList.remove('active');
+      })
+      gameEnd();
+    }
+    else {
+      this.style.top = 'initial';
+      this.style.botom = '-120px';
+      this.style.left = 'initial';
+      this.style.right = '50px';
+    }
+  }
+
+  function gameEnd() {
+    let k = document.querySelector('.pazzle_elem1');
+    let e = document.querySelector('.pazzle_elem2');
+    let p = document.querySelector('.pazzle_elem3');
+    let a = document.querySelector('.pazzle_elem4');
+
+
+    if (k.parentNode.classList.contains('pazzle_place') &&
+      e.parentNode.classList.contains('pazzle_place') &&
+      p.parentNode.classList.contains('pazzle_place') &&
+      a.parentNode.classList.contains('pazzle_place')) {
+
+
+      //let btn_game_1 = document.querySelector('.btn-game-1');
+      document.querySelector(".btn-game-1").click();
+
     }
 
-  })
-
-}
-
-function dragDrop1() {
-  if (itemAppend && itemAppend.classList.contains('active')) {
-    itemAppend.append(this);
-    this.style.top = `${itemAppend.offsetTop}px`;
-    this.style.left = `${itemAppend.offsetLeft - 40}px`;
-    empty.forEach(elem => {
-      elem.classList.remove('active');
-    })
-    gameEnd();
   }
-  else {
-    this.style.top = '-30px';
-    this.style.left = '15px';
-
-  }
-}
-function dragDrop2() {
-  if (itemAppend && itemAppend.classList.contains('active')) {
-    itemAppend.append(this);
-    this.style.top = `${itemAppend.offsetTop}px`;
-    this.style.left = `${itemAppend.offsetLeft}px`;
-    empty.forEach(elem => {
-      elem.classList.remove('active');
-    })
-    gameEnd();
-  }
-  else {
-    this.style.top = '-25px';
-    this.style.right = '0px';
-    this.style.left = 'initial';
-  }
-}
-
-function dragDrop3() {
-  if (itemAppend && itemAppend.classList.contains('active')) {
-    itemAppend.append(this);
-    this.style.top = `${itemAppend.offsetTop - 40}px`;
-    this.style.left = `${itemAppend.offsetLeft}px`;
-    empty.forEach(elem => {
-      elem.classList.remove('active');
-    })
-    gameEnd();
-  }
-  else {
-    this.style.top = 'initial';
-    this.style.botom = '-110px';
-    this.style.left = '60px';
-  }
-}
-
-function dragDrop4() {
-  if (itemAppend && itemAppend.classList.contains('active')) {
-    itemAppend.append(this);
-    this.style.top = `${itemAppend.offsetTop}px`;
-    this.style.left = `${itemAppend.offsetLeft}px`;
-    empty.forEach(elem => {
-      elem.classList.remove('active');
-    })
-    gameEnd();
-  }
-  else {
-    this.style.top = 'initial';
-    this.style.botom = '-120px';
-    this.style.left = 'initial';
-    this.style.right = '50px';
-  }
-}
-
-function gameEnd() {
-  let k = document.querySelector('.pazzle_elem1');
-  let e = document.querySelector('.pazzle_elem2');
-  let p = document.querySelector('.pazzle_elem3');
-  let a = document.querySelector('.pazzle_elem4');
-
-
-  if (k.parentNode.classList.contains('pazzle_place') &&
-    e.parentNode.classList.contains('pazzle_place') &&
-    p.parentNode.classList.contains('pazzle_place') &&
-    a.parentNode.classList.contains('pazzle_place')) {
-    let banner = document.querySelector('.banner1');
-    banner.classList.add('active');
-  }
-
-}
 
 
 </script>

@@ -323,4 +323,13 @@ footer{
   }
 }
 
+.btn-game-1{
+  display: none;
+}
 
+.modal.show .modal-dialog{
+  height: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
