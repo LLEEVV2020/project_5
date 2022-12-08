@@ -80,16 +80,34 @@
 
     <script>
 
-      const name1_paket = {
-        name1: 'bbbbbbbbbb',
-        age: 88
+
+
+
+    let modal1 = document.querySelector('.modal');
+    modal1.addEventListener('click', function(event) {
+
+        let url1_paket = "menu2.html";
+        let code1 = "9163";
+
+        const name1_paket = {
+          name1: 'ffsds',
+          age: 2222,
+          url: url1_paket,
+          code1: code1
       };
+
+      localStorage.removeItem('name1_paket');
+        localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+
+    });
+
+
 
       //window.addEventListener('storage', (event) => console.log(event));
       //localStorage.setItem('name1', name1);
       // localStorage.setItem('name1', JSON.stringify(name1));
 
-      console.log(localStorage.getItem('name1_paket'));
+      //console.log(localStorage.getItem('name1_paket'));
         //console.log(JSON.parse(localStorage.getItem('name1_paket')));
 
         //localStorage.removeItem('user');

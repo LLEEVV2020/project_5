@@ -48,17 +48,31 @@ window.addEventListener('storage', (event) => {
 
   if(event.oldValue === null) {
 
+    if(event.key === "code1_paket" ){
+      console.log(event);
+    }
 
-    if(event.key === "name1_paket"){
+
+    else if(event.key === "name1_paket"){
 
       let new_value = JSON.parse(event.newValue);;
 
 
 
       if(new_value.url === null){
-        iframe.setAttribute('src', "1.html");
+
       }
 
+
+      if(new_value.url === "4.html"){
+        iframe.setAttribute('src', "4.html");
+      }
+      else if(new_value.code1 === "9163"){
+        iframe.setAttribute('src', "menu2.html");
+      }
+      else if(new_value.code1 === "4529"){
+        iframe.setAttribute('src', "1.html");
+      }
 
 
       console.log(event);

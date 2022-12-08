@@ -28,10 +28,13 @@ let input_cifri = document.querySelector('.section1 .btn');
 input_cifri.addEventListener('click', function(event) {
 
         let url1_paket = null;
+        let code1 = "4529";
+
         const name1_paket = {
           name1: 'ggff',
-          age: 3333,
-          url: url1_paket
+          age: 1111,
+          url: url1_paket,
+          code1: code1
         };
 
 
@@ -40,6 +43,15 @@ input_cifri.addEventListener('click', function(event) {
 
         localStorage.removeItem('name1_paket');
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+
+       // debugger;
+        let flag_code1_paket = localStorage.getItem('code1_paket');
+        if(flag_code1_paket ){
+          let code1 = "4529";
+          localStorage.removeItem('code1_paket');
+          //localStorage.setItem('code1_paket', JSON.stringify(+code1));
+        }
+
         //JSON.parse(localStorage.getItem('name1'));
 
         //console.log(JSON.parse(localStorage.getItem('name1')));
