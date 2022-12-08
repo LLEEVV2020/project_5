@@ -45,6 +45,52 @@
           </div>
         </div>
 
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content modal-content1">
+        
+              <img class="modal-cart1" src="img/modal-cart4.png" alt="">
+        
+              <h2>Класс!
+                </h2>
+              <p>Забирай кешбэк до 20% на готовую еду в магазинах Пятёрочка и Перекрёсток. Главный приз всё ближе!</p>
+        
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt=""> Следующее задание</button>
+        
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-game-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
+
+        <script>
+      let modal1 = document.querySelector('.modal');
+        modal1.addEventListener('click', function(event) {
+
+          let url1_paket = "menu_2.html";
+          debugger;
+          const name1_paket = {
+            name1: 'ffsds',
+            age: 2222,
+            url: url1_paket,
+            code1: "9163"
+          };
+
+          localStorage.removeItem('name1_paket');
+        localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+
+
+        });
+
+       
+        </script>
+
+  
+
+
     <main class="main">
 
 

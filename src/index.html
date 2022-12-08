@@ -47,34 +47,67 @@
 
       if (event.oldValue === null) {
 
-        if (event.key === "code1_paket") {
+        /*if (event.key === "code1_paket") {
 
           if (event.newValue === "9163") {
             iframe.setAttribute('src', "4.html");
           }
           console.log(event);
-        }
+        }*/
+
+        /*if (event.key === "url2_paket") {
+
+        }*/
 
 
-        else if (event.key === "name1_paket") {
+        if (event.key === "name1_paket") {
+
+
+
 
           let new_value = JSON.parse(event.newValue);;
+          let flag_url2_paket = localStorage.getItem('url2_paket');
 
 
-
-          if (new_value.url === null) {
-
+          if (flag_url2_paket === "finish2.html"){
+            iframe.setAttribute('src', "finish2.html");
           }
-
-
-          if (new_value.url === "4.html") {
+          else if (new_value.url === "finish2.html"){
+            iframe.setAttribute('src', "finish2.html");
+          }
+          else if (flag_url2_paket === "2.html") {
+            iframe.setAttribute('src', "2.html");
+          }
+          else if (new_value.url === "menu_4.html"){
+            iframe.setAttribute('src', "menu_4.html");
+          }
+          else if (flag_url2_paket === "5.html") {
+            iframe.setAttribute('src', "5.html");
+          }
+          else if(new_value.url === "menu_3.html"){
+            iframe.setAttribute('src', "menu_3.html");
+          }
+          else if (flag_url2_paket === "3.html") {
+            iframe.setAttribute('src', "3.html");
+          }
+          else if(new_value.url === "menu_2.html"){
+            iframe.setAttribute('src', "menu_2.html");
+          }
+          else if(flag_url2_paket === "4.html"){
+            iframe.setAttribute('src', "4.html");
+          }
+          else if (new_value.url === "4.html") {
             iframe.setAttribute('src', "4.html");
           }
           else if (new_value.code1 === "9163") {
             iframe.setAttribute('src', "menu2.html");
           }
-          else if (new_value.code1 === "4529") {
+         /* else if (new_value.code1 === "4529") {
             iframe.setAttribute('src', "1.html");
+          }*/
+          // = "";
+          else if (new_value.url === "menu2.html") {
+            iframe.setAttribute('src', "menu2.html");
           }
           else {
             iframe.setAttribute('src', "1.html");

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+  <head>
+    @include('partials/head.html')
+  </head>
+
+<body class="page__body">
+  <div class="site-container">
+
+
+    @include('partials/header3.html')
+
+    <main class="main">
+
+
+    </main>
+
+    @include('partials/footer.html')
+    @include('partials/foot.html')
+
+    <script>
+
+            let flag_url2_paket = localStorage.getItem('url2_paket');
+          if(flag_url2_paket === "2.html"){
+
+            let url2_paket  = "finish2.html";
+            localStorage.removeItem('url2_paket');
+            localStorage.setItem('url2_paket', url2_paket);
+          }
+
+    </script>
+
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+</body>
+
+</html>

@@ -42,6 +42,21 @@
         let url1_paket = "4.html";
         //alert("hgg");
         if (text1 === "9163") {
+
+        
+        debugger;
+        let flag_code1_paket = localStorage.getItem('code1_paket');
+        // if (flag_code1_paket === null || flag_code1_paket === "4529") {
+
+        //if (flag_code1_paket === "9163") {
+          //text1
+          let code1 = "9163";
+          localStorage.removeItem('code1_paket');
+          localStorage.setItem('code1_paket', JSON.stringify(+code1));
+          
+       // }
+
+
           name1_paket = {
             name1: 'jjhhhgf',
             age: 3333,
@@ -53,15 +68,25 @@
         localStorage.removeItem('name1_paket');
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
-        debugger;
-        let flag_code1_paket = localStorage.getItem('code1_paket');
+
+        
+        let flag_url2_paket = localStorage.getItem('url2_paket');
+        if(flag_url2_paket === null){
+
+          let url2_paket  = "4.html";
+          localStorage.removeItem('url2_paket');
+          localStorage.setItem('url2_paket', url2_paket);
+        }
+
+       // debugger;
+        /*let flag_code1_paket = localStorage.getItem('code1_paket');
         // if (flag_code1_paket === null || flag_code1_paket === "4529") {
         if (flag_code1_paket === "9163") {
           //text1
           let code1 = "9163";
           localStorage.removeItem('code1_paket');
           localStorage.setItem('code1_paket', JSON.stringify(+code1));
-        }
+        }*/
 
         //console.log(cifri_input);
         console.log(text1);

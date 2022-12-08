@@ -4,5 +4,160 @@
   <p>и найди заветный подарок</p>
 </div>
 <br>
-<img style="width: 100%;" src="../img/game4.png" alt="">
 
+<style>
+
+  .container_wash {
+    width: 100%;
+    height: 32vh;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    -webkit-perspective: 500px;
+  }
+
+  .wash_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .wash_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .hand{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 88px;
+    height: 88px;
+    transform: translate(-50%, -50%);
+  }
+  .hand img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .wash_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wash_bg .blocks {
+    position: relative;
+    display: block;
+    width: 10%;
+    height: 4vh;
+    background: url(./img/ice_big.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    transition: .3s;
+  }
+  .wash_bg .blocks.active{
+    opacity: 0;
+  }
+  .banner4 {
+    display: none;
+    color: black;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 295px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner4.active {
+    display: flex;
+  }
+
+
+
+</style>
+
+
+<div class="container_wash">
+  <div class="wash_img">
+    <img src="img/img_wash.png" alt="img">
+  </div>
+
+  <div class="wash_bg">
+    <div class="blocks"></div>
+  </div>
+  <div class="hand">
+    <img src="img/svg/hand.svg" alt="icon">
+  </div>
+  <div class="banner4">Game Over</div>
+</div>
+
+<script>
+
+let banner = document.querySelector('.wash_bg');
+let blocks = document.getElementsByClassName('blocks');
+let hand = document.querySelector('.hand');
+let flag = false;
+
+for (let i = 1; i < 80; i++) {
+  banner.innerHTML += "<div class='blocks'></div>";
+}
+
+hand.addEventListener('touchmove', function () {
+  this.style.display = 'none';
+});
+
+for (let i = 0; i < blocks.length; i++) {
+  blocks[i].addEventListener('touchmove', funcHidden);
+}
+
+function funcHidden(event) {
+  event.preventDefault();
+  hand.style.display = 'none';
+  let touch = event.targetTouches[0];
+
+  for (let i = 0; i < blocks.length; i++) {
+    if (touch.pageY < blocks[i].getBoundingClientRect().bottom &&
+      touch.pageX > blocks[i].getBoundingClientRect().left &&
+      touch.pageY > blocks[i].getBoundingClientRect().top &&
+      touch.pageX < blocks[i].getBoundingClientRect().right) {
+      blocks[i].classList.add('active');
+    }
+  }
+  for (let j = 0; j < blocks.length; j++) {
+    if (blocks[j].classList.contains('active')) {
+      flag = true
+    }else{
+      flag = false;
+      return false;
+    }
+  }
+  if(flag){
+    funcWashEnd();
+  }
+
+}
+function funcWashEnd() {
+  document.querySelector(".btn-game-1").click();
+}
+
+</script>

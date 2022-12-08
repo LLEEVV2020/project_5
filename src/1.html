@@ -86,8 +86,25 @@
     let modal1 = document.querySelector('.modal');
     modal1.addEventListener('click', function(event) {
 
-        let url1_paket = "menu2.html";
-        let code1 = "9163";
+      let url1_paket = "menu2.html";
+
+      let code1 = "";
+      let flag_code1_paket = localStorage.getItem('code1_paket');
+      if ( flag_code1_paket === "9163") {
+        code1 = "9163";
+      } else if ( flag_code1_paket === "4529" ){
+        code1 = "4529";
+      } else {
+        code1 = null;
+      }
+
+     /* let url1_paket = "menu2.html";
+      let flag_url1_paket = localStorage.getItem('url1_paket');
+      if ( flag_code1_paket === "9163") {
+        code1 = "9163";
+      } else {
+        code1 = null;
+      }  */
 
         const name1_paket = {
           name1: 'ffsds',
