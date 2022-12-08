@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-  <head>
-    @include('partials/head.html')
-  </head>
+<head>
+  @include('partials/head.html')
+</head>
 
 <body class="page__body">
   <div class="site-container">
@@ -18,49 +18,54 @@
     @include('partials/foot.html')
 
     <script>
-    let cifri_input = document.querySelectorAll('.cifri-input');
+      let cifri_input = document.querySelectorAll('.cifri-input');
 
-    let text1 = "";
-    for (let input of cifri_input) {
-
-      //console.log(input);
-      input.addEventListener('click', function(event) {
-
-        text1 = this.value;
-      });
-    }
-
-
-    let btn1 = document.querySelector('.btn');
-    let name1_paket = "";
-
-    btn1.addEventListener('click', function(event) {
+      let text1 = "";
       for (let input of cifri_input) {
-        text1 = text1 + input.value;
-      }
 
-      let url1_paket = "4.html";
-      //alert("hgg");
-      if(text1 === "9163"){
-         name1_paket = {
-          name1: 'jjhhhgf',
-          age: 3333,
-          url: url1_paket,
-          code1: text1
-        };
+        //console.log(input);
+        input.addEventListener('click', function (event) {
+
+          text1 = this.value;
+        });
       }
 
 
+      let btn1 = document.querySelector('.btn');
+      let name1_paket = "";
 
+      btn1.addEventListener('click', function (event) {
+        for (let input of cifri_input) {
+          text1 = text1 + input.value;
+        }
 
+        let url1_paket = "4.html";
+        //alert("hgg");
+        if (text1 === "9163") {
+          name1_paket = {
+            name1: 'jjhhhgf',
+            age: 3333,
+            url: url1_paket,
+            code1: text1
+          };
+        }
 
-
-      localStorage.removeItem('name1_paket');
+        localStorage.removeItem('name1_paket');
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
-      //console.log(cifri_input);
-      console.log(text1);
-    });
+        debugger;
+        let flag_code1_paket = localStorage.getItem('code1_paket');
+        // if (flag_code1_paket === null || flag_code1_paket === "4529") {
+        if (flag_code1_paket === "9163") {
+          //text1
+          let code1 = "9163";
+          localStorage.removeItem('code1_paket');
+          localStorage.setItem('code1_paket', JSON.stringify(+code1));
+        }
+
+        //console.log(cifri_input);
+        console.log(text1);
+      });
 
 
 

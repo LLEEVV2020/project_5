@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-  <head>
-    @include('partials/head.html')
-  </head>
+<head>
+  @include('partials/head.html')
+</head>
 
 <style>
-iframe{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 1s;
-}
-body{
-  overflow: hidden;
-}
+  iframe {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+  }
 
-
+  body {
+    overflow: hidden;
+  }
 </style>
 
 <body class="page__body">
   <div class="site-container">
 
 
-  @include('partials/preloader.html')
+    @include('partials/preloader.html')
 
-  <iframe class="iframe" src="main.html" >
-    Ваш браузер не поддерживает плавающие фреймы!
- </iframe>
+    <iframe class="iframe" src="main.html">
+      Ваш браузер не поддерживает плавающие фреймы!
+    </iframe>
 
     @include('partials/foot.html')
 
@@ -37,53 +36,59 @@ body{
   </div>
 
   <script>
- //console.log(localStorage.getItem('name1'));
-        //console.log(JSON.parse(localStorage.getItem('name1')));
+    //console.log(localStorage.getItem('name1'));
+    //console.log(JSON.parse(localStorage.getItem('name1')));
 
-        //localStorage.removeItem('name1');
+    //localStorage.removeItem('name1');
     let iframe = document.querySelector('.iframe');
 
 
-window.addEventListener('storage', (event) => {
+    window.addEventListener('storage', (event) => {
 
-  if(event.oldValue === null) {
+      if (event.oldValue === null) {
 
-    if(event.key === "code1_paket" ){
-      console.log(event);
-    }
+        if (event.key === "code1_paket") {
 
-
-    else if(event.key === "name1_paket"){
-
-      let new_value = JSON.parse(event.newValue);;
-
+          if (event.newValue === "9163") {
+            iframe.setAttribute('src', "4.html");
+          }
+          console.log(event);
+        }
 
 
-      if(new_value.url === null){
+        else if (event.key === "name1_paket") {
+
+          let new_value = JSON.parse(event.newValue);;
+
+
+
+          if (new_value.url === null) {
+
+          }
+
+
+          if (new_value.url === "4.html") {
+            iframe.setAttribute('src', "4.html");
+          }
+          else if (new_value.code1 === "9163") {
+            iframe.setAttribute('src', "menu2.html");
+          }
+          else if (new_value.code1 === "4529") {
+            iframe.setAttribute('src', "1.html");
+          }
+          else {
+            iframe.setAttribute('src', "1.html");
+          }
+
+          console.log(event);
+
+
+        }
 
       }
 
 
-      if(new_value.url === "4.html"){
-        iframe.setAttribute('src', "4.html");
-      }
-      else if(new_value.code1 === "9163"){
-        iframe.setAttribute('src', "menu2.html");
-      }
-      else if(new_value.code1 === "4529"){
-        iframe.setAttribute('src', "1.html");
-      }
-
-
-      console.log(event);
-
-
-    }
-
-  }
-
-
-});
+    });
 
 
   </script>

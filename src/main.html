@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-  <head>
-    @include('partials/head.html')
-  </head>
+<head>
+  @include('partials/head.html')
+</head>
 
 <body class="page__body">
   <div class="site-container site-container-gray">
 
 
 
-  @include('partials/preloader.html')
+    @include('partials/preloader.html')
     @include('partials/section1.html')
 
     <main class="main">
@@ -20,15 +20,16 @@
     @include('partials/foot.html')
 
 
-<script>
+    <script>
 
-let input_cifri = document.querySelector('.section1 .btn');
+      let input_cifri = document.querySelector('.section1 .btn');
 
 
-input_cifri.addEventListener('click', function(event) {
+      input_cifri.addEventListener('click', function (event) {
 
         let url1_paket = null;
-        let code1 = "4529";
+        //let code1 = "4529";
+        let code1 = null;
 
         const name1_paket = {
           name1: 'ggff',
@@ -39,28 +40,22 @@ input_cifri.addEventListener('click', function(event) {
 
 
 
-       // localStorage.setItem('url1_paket', JSON.stringify(name1_paket));
+        // localStorage.setItem('url1_paket', JSON.stringify(name1_paket));
 
         localStorage.removeItem('name1_paket');
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
-       // debugger;
-        let flag_code1_paket = localStorage.getItem('code1_paket');
-        if(flag_code1_paket ){
-          let code1 = "4529";
-          localStorage.removeItem('code1_paket');
-          //localStorage.setItem('code1_paket', JSON.stringify(+code1));
-        }
+
 
         //JSON.parse(localStorage.getItem('name1'));
 
         //console.log(JSON.parse(localStorage.getItem('name1')));
 
 
-  //console.log(input_cifri);
-});
+        //console.log(input_cifri);
+      });
 
-</script>
+    </script>
 
     <!-- @include('html/h1.html') пример include -->
   </div>
