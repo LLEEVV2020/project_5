@@ -18,6 +18,17 @@ function getElement(url, selector, c) {
     }
   }
 
+  function promoCode (){
+
+    getElement('http://like-minded.somee.com/PromoCode/api/extradition', 'body', function(element) {
+        console.log(element);
+        //let zapisatsa  = document.querySelector('.seats-10-00');
+        //zapisatsa.dataset.value = element.innerHTML;
+    });
+
+  }
+  promoCode();
+
 
   function VizovStart(){
 
