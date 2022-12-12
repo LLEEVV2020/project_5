@@ -11,13 +11,45 @@
 
     @include('partials/header2.html')
     @include('partials/menu.html')
+
     <main class="main">
 
     </main>
 
+
     @include('partials/foot.html')
 
+    <script src="lib/input.js"></script>
+
     <script>
+
+      $('input').keydown(function(e){
+        $(this).val('');
+      });
+
+      $('input').keyup(function(e){
+        var $wrap = $(this).closest('.pincode');
+        var $inputs = $wrap.find('input[type="number"]');
+        var val = $(this).val();
+
+        // Ввод только цифр
+        if(val == val.replace(/[0-9]/, '')) {
+          $(this).val('');
+          return false;
+        }
+
+        // Передача фокуса следующему innput
+        $inputs.eq($inputs.index(this) + 1).focus();
+
+        // Заполнение input hidden
+        var fullval = '';
+        $inputs.each(function(){
+          fullval = fullval + (parseInt($(this).val()) || '0');
+        });
+        $wrap.find('input[type="hidden"]').val(fullval);
+      });
+////////////////////////////////////////
+
       let cifri_input = document.querySelectorAll('.cifri-input');
 
       let text1 = "";
@@ -41,42 +73,96 @@
 
         let url1_paket = "4.html";
         //alert("hgg");
-        if (text1 === "9163") {
-
-        
         debugger;
-        let flag_code1_paket = localStorage.getItem('code1_paket');
-        // if (flag_code1_paket === null || flag_code1_paket === "4529") {
+        if ( text1 === "4529" ||
+            text1 === "9163"  ||
+            text1 === "8437"  ||
+            text1 === "0375"  ||
+            text1 === "4826"
+            ) {
 
-        //if (flag_code1_paket === "9163") {
-          //text1
-          let code1 = "9163";
-          localStorage.removeItem('code1_paket');
-          localStorage.setItem('code1_paket', JSON.stringify(+code1));
-          
-       // }
-
-
-          name1_paket = {
-            name1: 'jjhhhgf',
-            age: 3333,
-            url: url1_paket,
-            code1: text1
-          };
-        }
-
-        localStorage.removeItem('name1_paket');
-        localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+              debugger;
+              var storedNames = JSON.parse(localStorage.getItem("codearr"));
+              let flag_continue = false;
 
 
-        
-        let flag_url2_paket = localStorage.getItem('url2_paket');
-        if(flag_url2_paket === null){
 
-          let url2_paket  = "4.html";
-          localStorage.removeItem('url2_paket');
-          localStorage.setItem('url2_paket', url2_paket);
-        }
+              for (let i = 0; i < storedNames.length; i++ ) {
+                //console.log(storedNames[i]);
+                if(text1 == storedNames[i]){
+
+                  storedNames[i] = "";
+                  localStorage.setItem("codearr", JSON.stringify(storedNames));
+                }
+
+                if(flag_continue){
+                  continue;
+                }
+
+
+                flag_continue = true;
+
+      /*
+                  4529
+                  9163
+                  8437
+                  0375
+                  4826
+      */
+
+                  let flag_code1_paket = localStorage.getItem('code1_paket');
+                  // if (flag_code1_paket === null || flag_code1_paket === "4529") {
+
+                  //if (flag_code1_paket === "9163") {
+                    //text1
+                    let code1 = "9163";
+                    localStorage.removeItem('code1_paket');
+                    localStorage.setItem('code1_paket', JSON.stringify(+code1));
+
+                  // }
+
+
+                    name1_paket = {
+                      name1: 'jjhhhgf',
+                      age: 3333,
+                      url: url1_paket,
+                      code1: text1
+                    };
+
+                    localStorage.removeItem('name1_paket');
+                    localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+
+
+                    let flag_url2_paket = localStorage.getItem('url2_paket');
+                    if(flag_url2_paket === null){
+
+                      let url2_paket  = "4.html";
+                      localStorage.removeItem('url2_paket');
+                      localStorage.setItem('url2_paket', url2_paket);
+                    }
+                    console.log(text1);
+
+
+              }
+
+            } else{
+
+              if ( text1 === "4529" ||
+                text1 === "9163"  ||
+                text1 === "8437"  ||
+                text1 === "0375"  ||
+                text1 === "4826"
+              ){
+                alert("Данный код вы ужу вводили!");
+              } else {
+                alert("Введите правильный код!");
+              }
+
+            }
+
+
+
+
 
        // debugger;
         /*let flag_code1_paket = localStorage.getItem('code1_paket');
@@ -89,7 +175,7 @@
         }*/
 
         //console.log(cifri_input);
-        console.log(text1);
+
       });
 
 

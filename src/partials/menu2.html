@@ -7,15 +7,18 @@
     чтобы продолжить игру</p>
 
 
-  <img class="menu1-img" src="img/map2.png" alt="">
+
+<img class="menu1-img" src="img/map2.png" alt="">
+    <!--<img class="menu1-img" src="img/svg/map2.svg" alt="">-->
 
 
-  <div class="wrapper_cifri-input">
+  <div class="wrapper_cifri-input pincode">
 
-    <input type="text" class="cifri-input"  maxlength="1" value=""   />
-    <input type="text" class="cifri-input"  maxlength="1" value=""   />
-    <input type="text" class="cifri-input" maxlength="1" value=""   />
-    <input type="text" class="cifri-input" maxlength="1" value=""   />
+    <input type="number" class="cifri-input" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+    <input type="number" class="cifri-input" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+    <input type="number" class="cifri-input" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+    <input type="number" class="cifri-input" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+    <input type="hidden" name="pincode">
 <!--
     <input type="text" class="cifri-input"  maxlength="1" value="8"   />
     <input type="text" class="cifri-input"  maxlength="1" value="4"   />
@@ -24,6 +27,7 @@
   -->
   </div>
 
-  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt=""> Начать игру</button>
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Начать игру</button>
 
 </div>
+

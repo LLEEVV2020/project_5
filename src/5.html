@@ -6,7 +6,7 @@
   </head>
 
 <body class="page__body ">
-  <div class="site-container">
+  <div class="site-container container-bottom">
 
     <header class="header header-flex">
 
@@ -47,19 +47,19 @@
           </div>
         </div>
 
-                
+
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content modal-content1">
-        
+
               <img class="modal-cart1" src="img/modal-cart5.png" alt="">
-        
+
               <h2>Почти у цели!
                 </h2>
               <p>Кешбэк 20% на выпечку в Пятёрочке и Перекрёстке активирован. Последний шаг и подарки твои.</p>
-        
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt=""> Получить подарки</button>
-        
+
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Получить подарки</button>
+
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@
         <script>
           let modal1 = document.querySelector('.modal');
             modal1.addEventListener('click', function(event) {
-    
+
               let url1_paket = "menu_4.html";
               debugger;
               const name1_paket = {
@@ -80,14 +80,14 @@
                 url: url1_paket,
                 code1: "0375"
               };
-    
+
               localStorage.removeItem('name1_paket');
             localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
-    
-    
+
+
             });
-    
-           
+
+
             </script>
 
     <main class="main">

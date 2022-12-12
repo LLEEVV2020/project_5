@@ -5,26 +5,27 @@
       </h2>
     <p>Введи номер точки с экрана активации, <br>
       чтобы продолжить игру</p>
-  
-  
-    <img class="menu1-img" src="img/map3.png" alt="">
-  
-  
-    <div class="wrapper_cifri-input">
-  
-      <input type="text" class="cifri-input"  maxlength="1" value=""   />
-      <input type="text" class="cifri-input"  maxlength="1" value=""   />
-      <input type="text" class="cifri-input" maxlength="1" value=""   />
-      <input type="text" class="cifri-input" maxlength="1" value=""   />
-  
+
+
+
+  <img class="menu1-img" src="img/map3.png" alt="">
+  <!--<img class="menu1-img" src="img/svg/map3.svg" alt="">-->
+
+    <div class="wrapper_cifri-input pincode">
+
+      <input type="number" class="cifri-input"  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+      <input type="number" class="cifri-input"  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+      <input type="number" class="cifri-input"  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+      <input type="number" class="cifri-input"  min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+      <input type="hidden" name="pincode">
+
       <!--<input type="text" class="cifri-input"  maxlength="1" value="0"   />
       <input type="text" class="cifri-input"  maxlength="1" value="3"   />
       <input type="text" class="cifri-input" maxlength="1" value="7"   />
       <input type="text" class="cifri-input" maxlength="1" value="5"   />-->
-  
+
     </div>
-  
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt=""> Начать игру</button>
-  
+
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Начать игру</button>
+
   </div>
-  

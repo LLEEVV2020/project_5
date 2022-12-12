@@ -40,6 +40,8 @@
       font-family: "Unbounded", sans-serif;
       letter-spacing: .04em;
       margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
     .btn{
@@ -99,8 +101,8 @@
   left: 0px;
   width: 111px;
   height: 213px;
-  background-image: url(../img/svg/vetka1.svg);
-  background-size: cover;
+  background-image: url(../img/vetka1.png);
+  background-size: contain;
   z-index: 1;
 }
 .vetka2{
@@ -109,7 +111,7 @@
   left: 0px;
   width: 145px;
   height: 213px;
-  background-image: url(../img/svg/vetka2.svg);
+  background-image: url(../img/vetka2.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
@@ -120,7 +122,7 @@
   right: 0px;
   width: 82px;
   height: 196px;
-  background-image: url(../img/svg/vetka3.svg);
+  background-image: url(../img/vetka3.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
@@ -132,7 +134,7 @@
   right: 0px;
   width: 127px;
   height: 220px;
-  background-image: url(../img/svg/vetka4.svg);
+  background-image: url(../img/vetka4.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
@@ -143,8 +145,8 @@
   display: block;
 
   width: 154px;
-  height: 85px;
-  margin-bottom: 16px;
+  height: 104px;
+  margin-bottom: 11px;
   position: relative;
 
   a{
@@ -153,7 +155,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/union.png);
+    //background-image: url(../img/union.png);
     z-index: 1;
   }
   &::before{
@@ -207,11 +209,14 @@
   .icons1{
     top: 10px;
     left: 10px;
-
+    width: 44px;
+    height: 44px;
   }
   .icons2{
     top: 6px;
     left: 8px;
+    width: 49px;
+    height: 49px;
 
   }
 }

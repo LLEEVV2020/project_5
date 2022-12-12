@@ -1,6 +1,6 @@
 
 
-function getElement(url, selector, c) {
+function getElement2(url, selector, c) {
     request(new XMLHttpRequest());
 
     function request(xhr) {
@@ -11,7 +11,21 @@ function getElement(url, selector, c) {
                 if(xhr.status == 200) {
                     html = document.createElement('div');
                     html.innerHTML = xhr.responseText;
-                    c(html.querySelector(selector));
+                    let text =  xhr.responseText;
+
+
+                    var str = xhr.responseText;
+                    if(str.length < 20 && selector === ""){
+                        c(text);
+                    }
+
+
+                   // if(selector === ""){
+                        //c(html.querySelector(selector));
+                        //c(html);
+                        //c(text);
+                    //}
+
                 }
             }
         }
@@ -20,38 +34,49 @@ function getElement(url, selector, c) {
 
   function promoCode (){
 
-    getElement('http://like-minded.somee.com/PromoCode/api/extradition', 'body', function(element) {
-        console.log(element);
-        //let zapisatsa  = document.querySelector('.seats-10-00');
-        //zapisatsa.dataset.value = element.innerHTML;
-    });
+    let promocode_5paket = localStorage.getItem('promocode_5paket');
+
+    if (promocode_5paket === "null"){
+        promocode_5paket = null
+    }
+
+    if(promocode_5paket === null){
+        getElement2('https://base.x5quest.ru/api/extradition', '', function(element) {
+            //console.log(element);
+            localStorage.setItem('promocode_5paket', JSON.stringify(element));
+        });
+    }
+
+    let codearritem = localStorage.getItem('codearr');
+
+    if (codearritem === "null"){
+        codearritem = null
+    }
+
+    if(codearritem === null){
+
+        var codearr = [];
+        codearr[0] = "4529";
+        codearr[1] = "9163";
+        codearr[2] = "8437";
+        codearr[3] = "0375";
+        codearr[4] = "4826";
+        localStorage.setItem("codearr", JSON.stringify(codearr));
+
+    }
+
+    //localStorage.removeItem('name1_paket');
+
+    //let zapisatsa  = document.querySelector('.seats-10-00');
+    //zapisatsa.dataset.value = element.innerHTML;
+
 
   }
   promoCode();
 
 
-  function VizovStart(){
 
 
-    getElement('http://like-minded.somee.com/PromoCode/api/QRGeneration?sringQR=QK21509', 'body', function(element) {
-      console.log(element);
-      let zapisatsa  = document.querySelector('.seats-10-00');
-      zapisatsa.dataset.value = element.innerHTML;
-    });
-
-    /*getElement('https://pro-dex.ru/1.php', '.question-hyperlink2', function(element) {
-        //console.log(element.innerHTML);
-        let zapisatsa  = document.querySelector('.seats-11-15');
-        zapisatsa.dataset.value = element.innerHTML;
-    });
-
-    getElement('https://pro-dex.ru/1.php', '.question-hyperlink3', function(element) {
-      console.log(element);
-    });*/
-
-  }
-
-    //VizovStart();
 
 
 // ИНПУТ С одной цифрой

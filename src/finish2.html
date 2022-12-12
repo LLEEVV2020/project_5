@@ -6,7 +6,7 @@
   </head>
 
 <body class="page__body">
-  <div class="site-container">
+  <div class="site-container container-bottom2">
 
 
     @include('partials/header3.html')
@@ -19,15 +19,57 @@
     @include('partials/footer3.html')
     @include('partials/foot.html')
 
+    <script src="lib/clipboard.min.js"></script>
     <script>
 
-            let flag_url2_paket = localStorage.getItem('url2_paket');
-          if(flag_url2_paket === "2.html"){
+let promocodePaket = JSON.parse(localStorage.getItem('promocode_5paket'));
+var promo_code = document.querySelector('.promo-code span');
+          promo_code.innerHTML = promocodePaket;
 
-            let url2_paket  = "finish2.html";
-            localStorage.removeItem('url2_paket');
-            localStorage.setItem('url2_paket', url2_paket);
-          }
+    var btn_link_code = document.querySelector('.btn-link-code');
+
+    var text_link_code = "//x5paket.ru/fastbuy_promo?promocode_katok=" + promocodePaket;
+    btn_link_code.setAttribute('href', text_link_code);
+
+
+
+
+    var promo_code_copy = document.querySelector('.promo-code-copy');
+
+
+      //var clipboard = new ClipboardJS(promo_code_copy);
+
+
+      debugger;
+      var clipboard = new ClipboardJS(promo_code_copy, {
+        text: function () {
+
+          return promocodePaket;
+        },
+      });
+
+      clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+      });
+
+      clipboard.on('error', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+      });
+
+
+  //promo_code_copy.setAttribute('data-clipboard-text', promocodePaket);
+
+      let flag_url2_paket = localStorage.getItem('url2_paket');
+      if(flag_url2_paket === "2.html"){
+
+        let url2_paket  = "finish2.html";
+        localStorage.removeItem('url2_paket');
+        localStorage.setItem('url2_paket', url2_paket);
+      }
 
     </script>
 

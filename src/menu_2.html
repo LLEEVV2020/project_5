@@ -9,7 +9,7 @@
   <div class="site-container">
 
 
-    
+
     <header class="header header-flex">
 
       <div class="panel-ball ball2">
@@ -33,68 +33,115 @@
     </main>
 
     @include('partials/foot.html')
+    <script src="lib/input.js"></script>
 
     <script>
         let cifri_input = document.querySelectorAll('.cifri-input');
-  
+
         let text1 = "";
         for (let input of cifri_input) {
-  
+
           //console.log(input);
           input.addEventListener('click', function (event) {
-  
+
             text1 = this.value;
           });
         }
-  
-  
+
+
         let btn1 = document.querySelector('.btn');
         let name1_paket = "";
-  
+
         btn1.addEventListener('click', function (event) {
           for (let input of cifri_input) {
             text1 = text1 + input.value;
           }
-  
+
           let url1_paket = "3.html";
           //alert("hgg");
-          if (text1 === "8437") {
-  
-          
+
+          //if (text1 === "8437") {
+          if ( text1 === "4529" ||
+            text1 === "9163"  ||
+            text1 === "8437"  ||
+            text1 === "0375"  ||
+            text1 === "4826"
+          ) {
+
+            debugger;
+              var storedNames = JSON.parse(localStorage.getItem("codearr"));
+              let flag_continue = false;
+
+              for (let i = 0; i < storedNames.length; i++ ) {
+
+                if(text1 == storedNames[i]){
+
+                storedNames[i] = "";
+                localStorage.setItem("codearr", JSON.stringify(storedNames));
+                }
+
+                if(flag_continue){
+                continue;
+                }
+
+
+                flag_continue = true;
+
+
           debugger;
           let flag_code1_paket = localStorage.getItem('code1_paket');
           // if (flag_code1_paket === null || flag_code1_paket === "4529") {
-  
+
           //if (flag_code1_paket === "9163") {
             //text1
             let code1 = "8437";
             localStorage.removeItem('code1_paket');
             localStorage.setItem('code1_paket', JSON.stringify(+code1));
-            
+
          // }
-  
-  
+
+
             name1_paket = {
               name1: 'jjhhhgf',
               age: 3333,
               url: url1_paket,
               code1: text1
             };
+
+
+            localStorage.removeItem('name1_paket');
+            localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+
+
+
+            let flag_url2_paket = localStorage.getItem('url2_paket');
+            if(flag_url2_paket === "4.html"){
+
+              let url2_paket  = "3.html";
+              localStorage.removeItem('url2_paket');
+              localStorage.setItem('url2_paket', url2_paket);
+            }
+
+            console.log(text1);
+
+             }// ==============
+
+          } else{
+
+            if ( text1 === "4529" ||
+                text1 === "9163"  ||
+                text1 === "8437"  ||
+                text1 === "0375"  ||
+                text1 === "4826"
+              ){
+                alert("Данный код вы ужу вводили!");
+              } else {
+                alert("Введите правильный код!");
+              }
           }
-  
-          localStorage.removeItem('name1_paket');
-          localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
-  
-  
-          
-          let flag_url2_paket = localStorage.getItem('url2_paket');
-          if(flag_url2_paket === "4.html"){
-  
-            let url2_paket  = "3.html";
-            localStorage.removeItem('url2_paket');
-            localStorage.setItem('url2_paket', url2_paket);
-          }
-  
+
+
+
          // debugger;
           /*let flag_code1_paket = localStorage.getItem('code1_paket');
           // if (flag_code1_paket === null || flag_code1_paket === "4529") {
@@ -104,18 +151,18 @@
             localStorage.removeItem('code1_paket');
             localStorage.setItem('code1_paket', JSON.stringify(+code1));
           }*/
-  
+
           //console.log(cifri_input);
-          console.log(text1);
+
         });
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
       </script>
 
 

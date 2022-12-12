@@ -7,7 +7,7 @@
 
 
 <body class="page__body">
-  <div class="site-container">
+  <div class="site-container container-bottom">
 
     <div class="findout">
 
@@ -35,8 +35,12 @@
 
       @include('partials/game1.html')
 
+
+    </div>
+
+
       <!-- Default dropstart button -->
-      <div class="wrapper-modal1">
+      <div class="wrapper-modal1" style="    padding-top: 0;">
         <div class=" dropstart ">
           <div class="dropstart-item" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="img/button.png" alt="">
@@ -51,8 +55,6 @@
         </div>
       </div>
 
-    </div>
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content modal-content1">
@@ -63,7 +65,7 @@
           </h2>
           <p>Теперь опция кешбэка 5% в Пятёрочке и Перекрёстке активирована</p>
 
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/icon-btn.png" alt="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt="">
             Следующее задание</button>
 
         </div>
@@ -87,6 +89,9 @@
 
       let code1 = "";
       let flag_code1_paket = localStorage.getItem('code1_paket');
+
+
+
       if ( flag_code1_paket === "9163") {
         code1 = "9163";
       } else if ( flag_code1_paket === "4529" ){

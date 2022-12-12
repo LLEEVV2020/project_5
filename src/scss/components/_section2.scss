@@ -30,6 +30,10 @@ color: #072845;
 
 .dropstart-item{
   cursor: pointer;
+  img{
+    width: 56px;
+    height: 56px;
+  }
 }
 .wrapper-modal1{
   z-index: 1;
@@ -47,8 +51,8 @@ color: #072845;
   }
 
   .dropdown-menu{
-    bottom: 0 !important;
-    top: inherit !important;
+  //  bottom: 0 !important;
+   // top: inherit !important;
     right: 11px !important;
   }
 

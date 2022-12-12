@@ -108,6 +108,15 @@
           // = "";
           else if (new_value.url === "menu2.html") {
             iframe.setAttribute('src', "menu2.html");
+
+            var codearr = [];
+            codearr[0] = "9163";
+            codearr[1] = "4529";
+            codearr[2] = "8437";
+            codearr[3] = "0375";
+            codearr[4] = "4826";
+            localStorage.setItem("codearr", JSON.stringify(codearr));
+
           }
           else {
             iframe.setAttribute('src', "1.html");
