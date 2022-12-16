@@ -35,12 +35,23 @@ var promo_code = document.querySelector('.promo-code span');
 
 
     var promo_code_copy = document.querySelector('.promo-code-copy');
+    promo_code_copy.addEventListener('click', function(event) {
+      localStorage.removeItem('x5paket_katok_qw_promocode_copy');
+      localStorage.setItem('x5paket_katok_qw_promocode_copy', "x5paket_katok_qw_promocode_copy");
 
+    });
+
+    var btn_link_code = document.querySelector('.btn-link-code');
+    btn_link_code.addEventListener('click', function(event) {
+      localStorage.removeItem('x5paket_katok_qw_1rub');
+      localStorage.setItem('x5paket_katok_qw_1rub', "x5paket_katok_qw_1rub");
+
+    });
 
       //var clipboard = new ClipboardJS(promo_code_copy);
 
 
-      debugger;
+      //debugger;
       var clipboard = new ClipboardJS(promo_code_copy, {
         text: function () {
 
@@ -70,6 +81,11 @@ var promo_code = document.querySelector('.promo-code span');
         localStorage.removeItem('url2_paket');
         localStorage.setItem('url2_paket', url2_paket);
       }
+
+      localStorage.removeItem('x5paket_katok_qw_screen_promocode');
+      localStorage.setItem('x5paket_katok_qw_screen_promocode', "x5paket_katok_qw_screen_promocode");
+
+
 
     </script>
 

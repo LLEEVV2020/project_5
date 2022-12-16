@@ -46,25 +46,35 @@
           });
         }
 
-        debugger;
+        //debugger;
         let btn1 = document.querySelector('.btn');
         let name1_paket = "";
 
         btn1.addEventListener('click', function (event) {
+
+          localStorage.removeItem('x5paket_katok_qw_screen_cross_start');
+          localStorage.setItem('x5paket_katok_qw_screen_cross_start', "x5paket_katok_qw_screen_cross_start");
+
+
           for (let input of cifri_input) {
             text1 = text1 + input.value;
           }
 
           let url1_paket = "5.html";
           //alert("hgg");
-          if ( text1 === "4529" ||
-            text1 === "9163"  ||
-            text1 === "8437"  ||
-            text1 === "0375"  ||
-            text1 === "4826"
-            ) {
 
-              debugger;
+        let text1Fllag = false;
+        var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
+        for (let i = 0; i < storedСodearr.length; i++ ) {
+          if(storedСodearr[i] === text1){
+            text1Fllag = true;
+          }
+        }
+
+       // debugger;
+        if ( text1Fllag ) {
+
+              //debugger;
               var storedNames = JSON.parse(localStorage.getItem("codearr"));
               let flag_continue = false;
 
@@ -84,7 +94,7 @@
                 flag_continue = true;
 
 
-            debugger;
+            //debugger;
             let flag_code1_paket = localStorage.getItem('code1_paket');
             // if (flag_code1_paket === null || flag_code1_paket === "4529") {
 
@@ -121,7 +131,19 @@
 
              }  // ============
 
+             const url2_paket2 = "5.html";
+              localStorage.removeItem('url2_paket');
+                //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+              localStorage.setItem('url2_paket', url2_paket2);
+
           } else{
+
+            let cifri_input2 = document.querySelectorAll('.cifri-input');
+            for (let input of cifri_input2) {
+
+              input.value = "";
+
+            }
 
             if ( text1 === "4529" ||
                 text1 === "9163"  ||
@@ -152,6 +174,8 @@
         });
 
 
+        localStorage.removeItem('x5paket_katok_qw_screen_cross_map');
+        localStorage.setItem('x5paket_katok_qw_screen_cross_map', "x5paket_katok_qw_screen_cross_map");
 
 
 

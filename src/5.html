@@ -52,11 +52,20 @@
           <div class="modal-dialog">
             <div class="modal-content modal-content1">
 
-              <img class="modal-cart1" src="img/modal-cart5.png" alt="">
+             <!-- <img class="modal-cart1" src="img/modal-cart5.png" alt="">
 
               <h2>Почти у цели!
                 </h2>
               <p>Кешбэк 20% на выпечку в Пятёрочке и Перекрёстке активирован. Последний шаг и подарки твои.</p>
+              -->
+
+              <img class="modal-cart1" src="img/modal-cart4.png" alt="">
+
+              <h2>Класс!
+                </h2>
+              <p>Забирай кешбэк до 20% на готовую еду в магазинах Пятёрочка и Перекрёсток. Главный приз всё ближе!</p>
+
+
 
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Получить подарки</button>
 
@@ -73,7 +82,7 @@
             modal1.addEventListener('click', function(event) {
 
               let url1_paket = "menu_4.html";
-              debugger;
+              //debugger;
               const name1_paket = {
                 name1: 'ffsds',
                 age: 2222,
@@ -84,6 +93,42 @@
               localStorage.removeItem('name1_paket');
             localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
+
+              const url2_paket2 = "menu_4.html";
+              localStorage.removeItem('url2_paket');
+                //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+              localStorage.setItem('url2_paket', url2_paket2);
+
+            });
+
+
+
+            localStorage.removeItem('x5paket_katok_qw_screen_cards');
+            localStorage.setItem('x5paket_katok_qw_screen_cards', "x5paket_katok_qw_screen_cards");
+
+            let dropstart_item = document.querySelector('.dropstart-item');
+            dropstart_item.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_cards_info');
+              localStorage.setItem('x5paket_katok_qw_screen_cards_info', "x5paket_katok_qw_screen_cards_info");
+
+            });
+
+
+            let btr2 = document.querySelector('.btr2');
+            btr2.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_cards_gotit');
+              localStorage.setItem('x5paket_katok_qw_screen_cards_gotit', "x5paket_katok_qw_screen_cards_gotit");
+
+            });
+
+
+            let modal1_btn = document.querySelector('.modal .btn');
+            modal1_btn.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_cards_next');
+              localStorage.setItem('x5paket_katok_qw_screen_cards_next', "x5paket_katok_qw_screen_cards_next");
 
             });
 

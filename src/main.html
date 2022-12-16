@@ -45,13 +45,28 @@
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
 
+        const url2_paket2 = "1.html";
+     localStorage.removeItem('url2_paket');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+     localStorage.setItem('url2_paket', url2_paket2);
 
         //JSON.parse(localStorage.getItem('name1'));
-
         //console.log(JSON.parse(localStorage.getItem('name1')));
-
-
         //console.log(input_cifri);
+
+        localStorage.removeItem('x5paket_katok_qw_prikl');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+        localStorage.setItem('x5paket_katok_qw_prikl', "x5paket_katok_qw_prikl");
+
+
+      });
+
+
+      let form_check_input = document.querySelector('.form-check-input');
+      form_check_input.addEventListener('click', function (event) {
+        localStorage.removeItem('x5paket_katok_qw_agreement');
+        localStorage.setItem('x5paket_katok_qw_agreement', "x5paket_katok_qw_agreement");
+
       });
 
     </script>

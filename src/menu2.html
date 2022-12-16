@@ -67,21 +67,31 @@
       let name1_paket = "";
 
       btn1.addEventListener('click', function (event) {
-        for (let input of cifri_input) {
-          text1 = text1 + input.value;
-        }
+        //for (let input of cifri_input) {
+        //  text1 = text1 + input.value;
+        //}
+
+        let pincodes = document.querySelector('.pincodes');
+        text1 = pincodes.value;
 
         let url1_paket = "4.html";
         //alert("hgg");
-        debugger;
-        if ( text1 === "4529" ||
-            text1 === "9163"  ||
-            text1 === "8437"  ||
-            text1 === "0375"  ||
-            text1 === "4826"
-            ) {
+        //debugger;
 
-              debugger;
+          // сделать условие флаг
+
+        let text1Fllag = false;
+        var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
+        for (let i = 0; i < storedСodearr.length; i++ ) {
+          if(storedСodearr[i] === text1){
+            text1Fllag = true;
+          }
+        }
+
+       // debugger;
+        if ( text1Fllag ) {
+
+
               var storedNames = JSON.parse(localStorage.getItem("codearr"));
               let flag_continue = false;
 
@@ -141,11 +151,21 @@
                       localStorage.setItem('url2_paket', url2_paket);
                     }
                     console.log(text1);
-
-
               }
 
+              const url2_paket2 = "4.html";
+              localStorage.removeItem('url2_paket');
+              //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+              localStorage.setItem('url2_paket', url2_paket2);
+
             } else{
+
+              let cifri_input2 = document.querySelectorAll('.cifri-input');
+              for (let input of cifri_input2) {
+
+                input.value = "";
+
+              }
 
               if ( text1 === "4529" ||
                 text1 === "9163"  ||
@@ -176,13 +196,23 @@
 
         //console.log(cifri_input);
 
+        localStorage.removeItem('x5paket_katok_qw_screen_puzzle_start');
+        localStorage.setItem('x5paket_katok_qw_screen_puzzle_start', "x5paket_katok_qw_screen_puzzle_start");
+
+
+
       });
 
 
 
+      //const name1_link1 = "menu2.html";
+      //localStorage.removeItem('name1_link1');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+      //localStorage.setItem('name1_link1', name1_link1);
 
 
-
+      localStorage.removeItem('x5paket_katok_qw_screen_puzzle_map');
+      localStorage.setItem('x5paket_katok_qw_screen_puzzle_map', "x5paket_katok_qw_screen_puzzle_map");
 
 
     </script>

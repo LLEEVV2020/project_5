@@ -49,7 +49,7 @@
           <div class="modal-dialog">
             <div class="modal-content modal-content1">
 
-              <img class="modal-cart1" src="img/modal-cart2.png" alt="">
+              <img class="modal-cart1" src="img/modal-cart5.png" alt="">
 
               <h2>Почти у цели!
                 </h2>
@@ -71,7 +71,7 @@
             modal1.addEventListener('click', function(event) {
 
               let url1_paket = "finish2.html";
-              debugger;
+              //debugger;
               const name1_paket = {
                 name1: 'ffsds',
                 age: 2222,
@@ -83,7 +83,44 @@
             localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
 
+              const url2_paket2 = "finish2.html";
+              localStorage.removeItem('url2_paket');
+                //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+              localStorage.setItem('url2_paket', url2_paket2);
+
             });
+
+
+            let modal1_btn = document.querySelector('.modal .btn');
+            modal1_btn.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_word_present');
+              localStorage.setItem('x5paket_katok_qw_screen_word_present', "x5paket_katok_qw_screen_word_present");
+
+            });
+
+
+            let dropstart_item = document.querySelector('.dropstart-item');
+            dropstart_item.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_word_info');
+              localStorage.setItem('x5paket_katok_qw_screen_word_info', "x5paket_katok_qw_screen_word_info");
+
+            });
+
+
+          let btr2 = document.querySelector('.btr2');
+          btr2.addEventListener('click', function(event) {
+
+            localStorage.removeItem('x5paket_katok_qw_screen_word_gotit');
+            localStorage.setItem('x5paket_katok_qw_screen_word_gotit', "x5paket_katok_qw_screen_word_gotit");
+
+          });
+
+
+            localStorage.removeItem('x5paket_katok_qw_screen_word');
+            localStorage.setItem('x5paket_katok_qw_screen_word', "x5paket_katok_qw_screen_word");
+
 
 
             </script>

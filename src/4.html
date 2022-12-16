@@ -22,7 +22,6 @@
       </div>
       <a class="header-logo" href="#"></a>
 
-
     </header>
 
 
@@ -30,7 +29,7 @@
     @include('partials/game4.html')
 
          <!-- Default dropstart button -->
-         <div class="wrapper-modal1">
+         <div class="wrapper-modal1 wrapper-modal1-open">
           <div class=" dropstart ">
             <div class="dropstart-item"  data-bs-toggle="dropdown" aria-expanded="false">
               <img src="img/button.png" alt="">
@@ -49,12 +48,20 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content modal-content1">
-
+<!--
               <img class="modal-cart1" src="img/modal-cart4.png" alt="">
 
               <h2>Класс!
                 </h2>
               <p>Забирай кешбэк до 20% на готовую еду в магазинах Пятёрочка и Перекрёсток. Главный приз всё ближе!</p>
+
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Следующее задание</button>
+-->
+              <img class="modal-cart1" src="img/modal-cart2.png" alt="">
+
+              <h2>Вау!
+                </h2>
+              <p>Ты на шаг ближе к призу. Активирована опция кешбэка 50% на твои любимые горячие напитки. Поехали дальше!</p>
 
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Следующее задание</button>
 
@@ -71,7 +78,7 @@
         modal1.addEventListener('click', function(event) {
 
           let url1_paket = "menu_2.html";
-          debugger;
+          //debugger;
           const name1_paket = {
             name1: 'ffsds',
             age: 2222,
@@ -82,9 +89,45 @@
           localStorage.removeItem('name1_paket');
         localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
+        const url2_paket2 = "menu_2.html";
+     localStorage.removeItem('url2_paket');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+     localStorage.setItem('url2_paket', url2_paket2);
 
         });
 
+  let modal1_btn = document.querySelector('.modal .btn');
+  modal1_btn.addEventListener('click', function(event) {
+
+    localStorage.removeItem('x5paket_katok_qw_screen_ice_next');
+    localStorage.setItem('x5paket_katok_qw_screen_ice_next', "x5paket_katok_qw_screen_ice_next");
+
+  });
+
+
+       // const name1_link1 = "4.html";
+     // localStorage.removeItem('name1_link1');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+     // localStorage.setItem('name1_link1', name1_link1);
+
+     localStorage.removeItem('x5paket_katok_qw_screen_ice');
+        localStorage.setItem('x5paket_katok_qw_screen_ice', "x5paket_katok_qw_screen_ice");
+
+        let dropstart_item = document.querySelector('.dropstart-item');
+        dropstart_item.addEventListener('click', function(event) {
+
+          localStorage.removeItem('x5paket_katok_qw_screen_ice_info');
+          localStorage.setItem('x5paket_katok_qw_screen_ice_info', "x5paket_katok_qw_screen_ice_info");
+
+        });
+
+        let btr2 = document.querySelector('.btr2');
+        btr2.addEventListener('click', function(event) {
+
+          localStorage.removeItem('x5paket_katok_qw_screen_ice_gotit');
+          localStorage.setItem('x5paket_katok_qw_screen_ice_gotit', "x5paket_katok_qw_screen_ice_gotit");
+
+        });
 
         </script>
 
@@ -99,6 +142,24 @@
     @include('partials/footer2.html')
     @include('partials/foot.html')
 
+    <style>
+
+      /*.wrapper-modal1-open .dropdown-menu{
+        position: absolute;
+          inset: 0px 0px auto auto;
+          margin: 0px;
+          transform: translate3d(-58px, -108px, 0px);
+          display: block;
+      }*/
+
+    </style>
+
+    <script>
+document.querySelector(".dropstart-item").click();
+
+
+
+    </script>
 
     <!-- @include('html/h1.html') пример include -->
   </div>

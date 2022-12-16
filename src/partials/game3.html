@@ -162,7 +162,31 @@ function reset() {
     //banner.classList.add('active');
     document.querySelector(".btn-game-1").click();
 
+    localStorage.removeItem('x5paket_katok_qw_screen_free6');
+    localStorage.setItem('x5paket_katok_qw_screen_free6', "x5paket_katok_qw_screen_free6");
+
+    let page__body = document.querySelector('.btn-game-1');
+    page__body.classList.add("btn-game-2");
+    //debugger;
+
   }, 500);
 }
 
 </script>
+
+<style>
+
+
+.btn-game-2{
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+</style>

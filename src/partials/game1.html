@@ -237,9 +237,20 @@
       //let btn_game_1 = document.querySelector('.btn-game-1');
       document.querySelector(".btn-game-1").click();
 
+
+      let modal_content1 = document.querySelector('.modal  .btn');
+      modal_content1.addEventListener('click', function(event) {
+
+          localStorage.removeItem('x5paket_katok_qw_screen_puzzle_next');
+          localStorage.setItem('x5paket_katok_qw_screen_puzzle_next', "x5paket_katok_qw_screen_puzzle_next");
+
+       });
+
     }
 
   }
+
+
 
 
 </script>

@@ -1,1 +1,26 @@
 
+
+  body{
+    color: #887;
+  }
+// 33
+@for $j from 1 through 17 {
+
+    @for $i from 1 through 17 {
+
+        $j2: $j - 1;
+
+        .wash_bg .blocks:nth-child(n + #{$i + ($j2 * 17)}) {
+          //background-color: lighten(#444, $i * 5%);
+          $i2: $i - 1;
+          ///$j2 * 1;
+          ///
+          //top: 1.25vh * $j2 - 1.25vh;
+          top: 2.5vh * $j2 - 2.5vh;
+
+          left: #{($i2) * 3.125% - 3.125%} ;
+          left: #{($i2) * 6.25% - 6.25%} ;
+
+        }
+    }
+}

@@ -42,13 +42,13 @@
       <!-- Default dropstart button -->
       <div class="wrapper-modal1" style="    padding-top: 0;">
         <div class=" dropstart ">
-          <div class="dropstart-item" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="dropstart-item " data-bs-toggle="dropdown" aria-expanded="false">
             <img src="img/button.png" alt="">
           </div>
           <div class="dropdown-menu modal1">
 
             <div>Передвигай изображения в клетки, чтобы собрать картинку</div>
-            <div data-bs-toggle="dropdown" aria-expanded="false" href="1.html" class="btn btr2">Понятно</div>
+            <div data-bs-toggle="dropdown" aria-expanded="false"  class="btn btr2 dropdown">Понятно</div>
 
           </div>
           </ul>
@@ -108,7 +108,7 @@
         code1 = null;
       }  */
 
-        const name1_paket = {
+      const name1_paket = {
           name1: 'ffsds',
           age: 2222,
           url: url1_paket,
@@ -116,8 +116,25 @@
       };
 
       localStorage.removeItem('name1_paket');
-        localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
+      localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
+
+
+      const url2_paket2 = "menu2.html";
+     localStorage.removeItem('url2_paket');
+      //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+     localStorage.setItem('url2_paket', url2_paket2);
+
+     localStorage.removeItem('x5paket_katok_qw_screen_cashback5_goods');
+        localStorage.setItem('x5paket_katok_qw_screen_cashback5_goods', "x5paket_katok_qw_screen_cashback5_goods");
+
+    });
+
+    let btr2 = document.querySelector('.btr2');
+    btr2.addEventListener('click', function(event) {
+
+        localStorage.removeItem('x5paket_katok_qw_screen_puzzle_gotit');
+        localStorage.setItem('x5paket_katok_qw_screen_puzzle_gotit', "x5paket_katok_qw_screen_puzzle_gotit");
     });
 
 
@@ -142,6 +159,25 @@
 
     @include('partials/footer2.html')
     @include('partials/foot.html')
+
+    <script>
+        localStorage.removeItem('x5paket_katok_qw_screen_puzzle');
+        localStorage.setItem('x5paket_katok_qw_screen_puzzle', "x5paket_katok_qw_screen_puzzle");
+
+
+
+        let dropstart_item = document.querySelector('.dropstart-item');
+        dropstart_item.addEventListener('click', function (event) {
+          localStorage.removeItem('x5paket_katok_qw_screen_puzzle_info');
+          localStorage.setItem('x5paket_katok_qw_screen_puzzle_info', "x5paket_katok_qw_screen_puzzle_info");
+
+
+        });
+
+
+
+
+    </script>
 
 
     <!-- @include('html/h1.html') пример include -->

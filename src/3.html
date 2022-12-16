@@ -71,7 +71,7 @@
             modal1.addEventListener('click', function(event) {
 
               let url1_paket = "menu_3.html";
-              debugger;
+              //debugger;
               const name1_paket = {
                 name1: 'ffsds',
                 age: 2222,
@@ -82,11 +82,45 @@
               localStorage.removeItem('name1_paket');
             localStorage.setItem('name1_paket', JSON.stringify(name1_paket));
 
+            const url2_paket2 = "menu_3.html";
+              localStorage.removeItem('url2_paket');
+                //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
+              localStorage.setItem('url2_paket', url2_paket2);
+            });
+
+
+            let modal1_btn = document.querySelector('.modal .btn');
+            modal1_btn.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_cross_next');
+              localStorage.setItem('x5paket_katok_qw_screen_cross_next', "x5paket_katok_qw_screen_cross_next");
 
             });
 
 
-            </script>
+            let dropstart_item = document.querySelector('.dropstart-item');
+            dropstart_item.addEventListener('click', function(event) {
+
+              localStorage.removeItem('x5paket_katok_qw_screen_cross_info');
+              localStorage.setItem('x5paket_katok_qw_screen_cross_info', "x5paket_katok_qw_screen_cross_info");
+
+            });
+
+
+          let btr2 = document.querySelector('.btr2');
+          btr2.addEventListener('click', function(event) {
+
+            localStorage.removeItem('x5paket_katok_qw_screen_cross_gotit');
+            localStorage.setItem('x5paket_katok_qw_screen_cross_gotit', "x5paket_katok_qw_screen_cross_gotit");
+
+          });
+
+
+            localStorage.removeItem('x5paket_katok_qw_screen_cross');
+            localStorage.setItem('x5paket_katok_qw_screen_cross', "x5paket_katok_qw_screen_cross");
+
+
+        </script>
 
     <main class="main">
 

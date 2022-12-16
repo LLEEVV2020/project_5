@@ -447,3 +447,74 @@ footer{
     margin-top: auto;
   }
 }
+
+
+/*Загрузчик*/
+.rotate-container {
+  visibility: hidden;
+  background: #57B1FF;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:100vh;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  z-index: 10;
+  align: center;
+  text-align: center;
+  vertical-align: middle;
+  position: fixed;
+}
+
+.phone {
+  height: 50px;
+  width: 100px;
+  border: 3px solid white;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  /* display: none; */
+}
+
+.message {
+  color: white;
+  font-size: 1em;
+  margin-top: 40px;
+  /* display: none; */
+}
+
+@keyframes rotate {
+  0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(-90deg)
+	}
+	100% {
+		transform: rotate(-90deg)
+	}
+}
+
+@media only screen and (max-device-width: 1012px) and (orientation: landscape) {
+  .phone, .message {
+    display: block;
+  }
+  .rotate-container {
+    display: flex;
+    visibility: visible;
+  }
+}
+@media only screen and (orientation: portrait) {
+  .phone, .message {
+    display: block;
+  }
+  .rotate-container {
+    display: none;
+    visibility: hidden;
+  }
+}

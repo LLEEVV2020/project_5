@@ -41,7 +41,7 @@ function getElement2(url, selector, c) {
     }
 
     if(promocode_5paket === null){
-        getElement2('https://base.x5quest.ru/api/extradition', '', function(element) {
+        getElement2('https://base.x5quest.ru/api/extradition?name=QKCDNJG', '', function(element) {
             //console.log(element);
             localStorage.setItem('promocode_5paket', JSON.stringify(element));
         });
@@ -107,4 +107,22 @@ function getElement2(url, selector, c) {
         }
 
     }
+
+
+
+
+
+window.onresize = function (event) {
+    applyOrientation();
+}
+
+function applyOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+        //You are now in portrait
+    } else {
+    //You are now in landscape
+    }
+}
+
+
 

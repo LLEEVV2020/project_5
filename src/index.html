@@ -26,6 +26,14 @@
 
     @include('partials/preloader.html')
 
+    <div class="rotate-container">
+      <div class="phone">
+      </div>
+      <div class="message">
+        Разверните экран пожалуйста
+      </div>
+    </div>
+
     <iframe class="iframe" src="main.html">
       Ваш браузер не поддерживает плавающие фреймы!
     </iframe>
@@ -36,11 +44,31 @@
   </div>
 
   <script>
+
+
+
+
     //console.log(localStorage.getItem('name1'));
     //console.log(JSON.parse(localStorage.getItem('name1')));
 
     //localStorage.removeItem('name1');
     let iframe = document.querySelector('.iframe');
+
+    let flag_url2_paket1 = localStorage.getItem('url2_paket');
+    if(flag_url2_paket1 === null || flag_url2_paket1 === "null" ){
+
+    } else{
+      iframe.setAttribute('src', flag_url2_paket1);
+
+    }
+    if(flag_url2_paket1 === "menu2.html" ||
+        flag_url2_paket1 === "menu_2.html" ||
+        flag_url2_paket1 === "menu_3.html" ||
+        flag_url2_paket1 === "menu_4.html"
+    ) {
+      let rotate_container = document.querySelector('.rotate-container');
+      rotate_container.style.display = "none";
+    }
 
 
     window.addEventListener('storage', (event) => {
@@ -127,13 +155,196 @@
 
         }
 
+        if (event.key === "x5paket_katok_qw_prikl") {
+          console.log("hhhh");
+         //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-prikl');
+        }
+        if (event.key === "x5paket_katok_qw_agreement") {
+          console.log("hhhh");
+         //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-agreement');
+        }
+        if (event.key === "x5paket_katok_qw_screen_puzzle") {
+          console.log("hhhh");
+          //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle');
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_puzzle_info") {
+          console.log("hhhh");
+         //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle-info');
+        }
+        if (event.key === "x5paket_katok_qw_screen_puzzle_gotit") {
+          console.log("hhhh");
+          //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle-gotit');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cashback5_goods") {
+          console.log("hhhh");
+         //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cashback5-goods');
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_puzzle_next") {
+          console.log("hhhh");
+        //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle-next');
+        }
+        if (event.key === "x5paket_katok_qw_screen_puzzle_map") {
+          console.log("hhhh");
+        //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle-map')
+        }
+        if (event.key === "x5paket_katok_qw_screen_puzzle_start") {
+          console.log("hhhh");
+        //888888888888  ym(91603527,'reachGoal','x5paket-katok-qw-screen-puzzle-start')
+        }
+        if (event.key === "x5paket_katok_qw_screen_ice") {
+          console.log("hhhh");
+        //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice')
+        }
+        if (event.key === "x5paket_katok_qw_screen_ice_info") {
+          console.log("hhhh");
+        //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice-info');
+        }
+        if (event.key === "x5paket_katok_qw_screen_ice_gotit") {
+          console.log("hhhh");
+        //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice-gotit');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cashback50_drinks") {
+          console.log("hhhh");
+        //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cashback50-drinks');
+
+        }
+        if (event.key === "x5paket_katok_qw_screen_ice_next") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice-next');
+
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_ice_map") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice-map');
+
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_ice_start") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-ice-start');
+
+        }
+        if (event.key === "x5paket_katok_qw_screen_cross") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cross_info") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross-info');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cross_gotit") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross-gotit');
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_free6") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-free6')
+        }
+        if (event.key === "x5paket_katok_qw_screen_cross_next") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross-next');
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_cross_map") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross-map');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cross_start") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cross-start');
+        }
+
+
+        if (event.key === "x5paket_katok_qw_screen_cards") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cards_info") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards-info');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cards_gotit") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards-gotit');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cashback20_food") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cashback20-food');
+        }
+        if (event.key === "x5paket_katok_qw_screen_cards_next") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards-next')
+        }
+        if (event.key === "x5paket_katok_qw_screen_cards_map") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards-map')
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_cards_start") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cards-start')
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_word") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-word')
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_word_info") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-word-info')
+        }
+        if (event.key === "x5paket_katok_qw_screen_word_gotit") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-word-gotit')
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_cashback20_bulki") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-cashback20-bulki')
+        }
+        if (event.key === "x5paket_katok_qw_screen_word_present") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-word-present')
+        }
+
+        if (event.key === "x5paket_katok_qw_screen_promocode") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-screen-promocode')
+        }
+        if (event.key === "x5paket_katok_qw_promocode_copy") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-promocode-copy')
+        }
+
+
+        if (event.key === "x5paket_katok_qw_1rub") {
+          console.log("hhhh");
+          //888888888888 ym(91603527,'reachGoal','x5paket-katok-qw-1rub')
+        }
+
+        if (event.key === "tttt") {
+
+        }
+
+
+
+
+
       }
 
 
     });
 
-
+    window.onload = function() {
+      //ym(91603527,'reachGoal','x5paket-katok-qw-screen1');
+    }
   </script>
 </body>
+
 
 </html>
