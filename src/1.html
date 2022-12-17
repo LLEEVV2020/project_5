@@ -55,7 +55,7 @@
         </div>
       </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal_1 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content modal-content1">
 
@@ -73,8 +73,12 @@
     </div>
 
     <button type="button" class="btn btn-primary btn-game-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Launch demo modal
+      Завершение игры
     </button>
+
+
+
+
 
 
     <script>
@@ -82,7 +86,7 @@
 
 
 
-    let modal1 = document.querySelector('.modal');
+    let modal1 = document.querySelector('.modal_1');
     modal1.addEventListener('click', function(event) {
 
       let url1_paket = "menu2.html";
@@ -173,6 +177,11 @@
 
 
         });
+
+
+
+                      localStorage.removeItem('url2_paket');
+                      localStorage.setItem('url2_paket', "menu2.html");
 
 
 

@@ -171,7 +171,8 @@
     display: flex;
   }
 
-  .container_wash:hover .hand{
+  .container_wash:hover .hand,
+  .container_wash:focus .hand{
     display: none;
   }
   .container_wash:hover .wash_bg{
@@ -181,18 +182,22 @@
     z-index: 3;
   }
 
+  .wash_bg:hover + .hand{
+    display: none;
+  }
+
 </style>
 
 
 <div class="container_wash">
-  <div class="wash_img">
+  <div class="wash_img" style="opacity:  0;">
     <img src="img/img_wash.png" alt="img">
   </div>
 
   <div class="wash_bg">
     <div class="blocks"></div>
   </div>
-  <div class="hand">
+  <div class="hand" style="display: none;">
     <img src="img/svg/hand.svg" alt="icon">
   </div>
   <div class="banner4">Game Over</div>
@@ -250,7 +255,7 @@ function funcHidden(event) {
       if(flagLength > 50 ){
         flagLength = 0;
         let blocks = document.querySelectorAll('.blocks.active');
-        if(blocks.length > 450){
+        if(blocks.length > 440){
           funcWashEnd();
 
           localStorage.removeItem('x5paket_katok_qw_screen_cashback50_drinks');
@@ -277,6 +282,8 @@ function funcWashEnd() {
 
 }
 
+let wash_img1 =  document.querySelector(".wash_img");
+wash_img1.style.opacity = 1;
 
 </script>
 

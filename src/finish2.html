@@ -16,6 +16,28 @@
 
     </main>
 
+
+    <div class="modal_proverka_cifr modal fade" id="proverka_cifr" tabindex="-1" aria-labelledby="proverka_cifrLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content modal-content1">
+
+
+
+          <h2>Скопирован!
+          </h2>
+          <p>Вы успешно скопировали промокод!</p>
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt="">
+            Закрыть</button>
+
+        </div>
+      </div>
+    </div>
+
+    <button style="display: none;" type="button" class="btn btn-primary btn-proverka-cifr" data-bs-toggle="modal" data-bs-target="#proverka_cifr">
+      ПРОВЕКРКА
+    </button>
+
     @include('partials/footer3.html')
     @include('partials/foot.html')
 
@@ -38,6 +60,8 @@ var promo_code = document.querySelector('.promo-code span');
     promo_code_copy.addEventListener('click', function(event) {
       localStorage.removeItem('x5paket_katok_qw_promocode_copy');
       localStorage.setItem('x5paket_katok_qw_promocode_copy', "x5paket_katok_qw_promocode_copy");
+      document.querySelector(".btn-proverka-cifr").click();
+
 
     });
 

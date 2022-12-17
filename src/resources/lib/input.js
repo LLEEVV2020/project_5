@@ -1,5 +1,21 @@
 $('input').keydown(function(e){
     $(this).val('');
+
+    if (event.code == 'Backspace') {
+
+
+      if ( $(this).hasClass("cifri-input2") ) {
+        $(".cifri-input1").focus();
+      }
+      if ( $(this).hasClass("cifri-input3") ) {
+        $(".cifri-input2").focus();
+      }
+      if ( $(this).hasClass("cifri-input4") ) {
+        $(".cifri-input3").focus();
+      }
+
+    }
+
   });
 
   $('input').keyup(function(e){
@@ -23,3 +39,4 @@ $('input').keydown(function(e){
     });
     $wrap.find('input[type="hidden"]').val(fullval);
   });
+

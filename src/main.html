@@ -3,6 +3,41 @@
 
 <head>
   @include('partials/head.html')
+  <style>
+  .btn-title, .btn_title_botton4, .btn_title_botton3{
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .animationopacity{
+    opacity: 1;
+  }
+  .animationhtml {
+
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(255,255,255, 0.4);
+  animation: pulse 2s infinite;
+
+}
+.animationhtml:hover {
+  animation: none;
+}
+
+
+  @keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+
+  </style>
 </head>
 
 <body class="page__body">
@@ -16,6 +51,9 @@
     <main class="main">
 
     </main>
+
+
+
     @include('partials/foot.html')
 
 
@@ -69,7 +107,55 @@
 
       });
 
+
+    let btn_title_anim1 = document.querySelector('.btn-title-anim1');
+    let btn_title_anim2 = document.querySelector('.btn-title-anim2');
+    let btn_title_botton3 = document.querySelector('.btn_title_botton3');
+    let btn_title_botton4 = document.querySelector('.btn_title_botton4');
+
+
+    function codeAddress() {
+
+      setTimeout( function(){
+        //btn_title_anim1.classList.add('wow', 'animate__heartBeat');
+        btn_title_anim1.classList.add('animationhtml', 'animationopacity');
+      }, 2500);
+      setTimeout( function(){
+        btn_title_anim1.classList.remove('animationhtml');
+      //btn_title_anim2.classList.add('wow', 'animate__heartBeat');
+      }, 8000);
+
+      setTimeout( function(){
+        btn_title_anim2.classList.add('animationhtml', 'animationopacity');
+      //btn_title_anim2.classList.add('wow', 'animate__heartBeat');
+      }, 4500);
+
+      setTimeout( function(){
+        btn_title_anim2.classList.remove('animationhtml');
+      //btn_title_anim2.classList.add('wow', 'animate__heartBeat');
+      }, 12000);
+
+
+
+      setTimeout( function(){
+        btn_title_botton3.classList.add('animationhtml', 'animationopacity');
+        btn_title_botton4.classList.add('animationhtml', 'animationopacity');
+      }, 6500);
+
+      setTimeout( function(){
+        btn_title_botton3.classList.remove('animationhtml');
+        btn_title_botton4.classList.remove('animationhtml');
+      }, 16000);
+
+
+    }
+    window.onload = codeAddress;
+
+
+
     </script>
+
+
 
     <!-- @include('html/h1.html') пример include -->
   </div>

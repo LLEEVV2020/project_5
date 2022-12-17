@@ -30,6 +30,27 @@
 
     </main>
 
+    <div class="modal_proverka_cifr modal fade" id="proverka_cifr" tabindex="-1" aria-labelledby="proverka_cifrLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content modal-content1">
+
+
+
+          <h2>Неверный код!
+          </h2>
+          <p>Введите правильный код! У вас всё получится!</p>
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt="">
+            Закрыть</button>
+
+        </div>
+      </div>
+    </div>
+
+    <button style="display: none;" type="button" class="btn btn-primary btn-proverka-cifr" data-bs-toggle="modal" data-bs-target="#proverka_cifr">
+      ПРОВЕКРКА
+    </button>
+
     @include('partials/foot.html')
     <script src="lib/input.js"></script>
 
@@ -66,7 +87,7 @@
         let text1Fllag = false;
         var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
         for (let i = 0; i < storedСodearr.length; i++ ) {
-          if(storedСodearr[i] === text1){
+          if(storedСodearr[i] === text1 && text1.length !== 0){
             text1Fllag = true;
           }
         }
@@ -136,6 +157,9 @@
                 //localStorage.setItem('name1_link1', JSON.stringify(name1_link1)); menu2.html
               localStorage.setItem('url2_paket', url2_paket2);
 
+
+              localStorage.setItem('5paket_pin_4', text1);
+
           } else{
 
             let cifri_input2 = document.querySelectorAll('.cifri-input');
@@ -150,10 +174,28 @@
                 text1 === "8437"  ||
                 text1 === "0375"  ||
                 text1 === "4826"
-              ){
-                alert("Данный код вы ужу вводили!");
+                ){
+
+              //alert("Данный код вы ужу вводили!");
+
+
+              let modal_content1_h2 = document.querySelector(".modal-content1 h2");
+              let modal_content1_p = document.querySelector(".modal-content1 p");
+              modal_content1_h2.innerHTML = "Использо- ванный код!";
+              modal_content1_p.innerHTML = "Введите новый код! У вас всё получится!";
+
+              document.querySelector(".btn-proverka-cifr").click();
+
               } else {
-                alert("Введите правильный код!");
+
+              let modal_content1_h2 = document.querySelector(".modal-content1 h2");
+              let modal_content1_p = document.querySelector(".modal-content1 p");
+              modal_content1_h2.innerHTML = "Неверный код!";
+              modal_content1_p.innerHTML = "Введите правильный код! У вас всё получится!";
+
+              document.querySelector(".btn-proverka-cifr").click();
+              //alert("Введите правильный код!");
+
               }
           }
 

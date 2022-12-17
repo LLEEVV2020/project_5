@@ -136,7 +136,7 @@ p{
       margin-bottom: 0;
       text-align: left;
       line-height: 130%;
-
+      font-weight: 700;
     }
   }
   .promo-code{
@@ -516,5 +516,45 @@ footer{
   .rotate-container {
     display: none;
     visibility: hidden;
+  }
+}
+
+.map-new-wrapper{
+  position: relative;
+  .icon-new{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/icons.png");
+    background-size: cover;
+    width: 33px;
+    height: 33px;
+    display: none;
+  }
+  .icon-new1-css{
+    top: 59px;
+    left: -1px;
+    display: block;
+  }
+  .icon-new2-css{
+    top: 59px;
+    left: 90px;
+    display: block;
+  }
+  .icon-new3-css{
+    top: 82px;
+    left: 210px;
+    display: block;
+  }
+  .icon-new4-css{
+
+    display: block;
+    top: 32px;
+    left: 211px;
+  }
+  .icon-new5-css{
+    top: 12px;
+    left: 259px;
+    display: block;
   }
 }
