@@ -85,20 +85,6 @@ function getElement2(url, selector, c) {
 
     }
 
-    if(getAll !== null || getAll !== ""){
-      localStorage.setItem('5paket_pin_1', getAll);
-
-      var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
-      for (let i = 0; i < storedСodearr.length; i++ ) {
-        if(storedСodearr[i] === getAll && getAll.length !== 0){
-
-          storedСodearr[i] = "";
-          localStorage.setItem("codearr", JSON.stringify(storedСodearr));
-          return;
-        }
-      }
-    }
-
     //localStorage.removeItem('name1_paket');
 
     //let zapisatsa  = document.querySelector('.seats-10-00');
