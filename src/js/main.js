@@ -32,6 +32,8 @@ function getElement2(url, selector, c) {
     }
   }
 
+
+
   function promoCode (){
 
     let promocode_5paket = localStorage.getItem('promocode_5paket');
@@ -40,16 +42,30 @@ function getElement2(url, selector, c) {
         promocode_5paket = null
     }
 
+    let getAll = getAllUrlParams().pin; // '0000'
+
     if(promocode_5paket === null){
         getElement2('https://base.x5quest.ru/api/extradition?name=QKCDNJG', '', function(element) {
             //console.log(element);
             localStorage.setItem('promocode_5paket', JSON.stringify(element));
         });
 
-        let getAll = getAllUrlParams().pin; // 'shirt'
+
         //console.log(getAll);
         localStorage.setItem('5paket_pin_1', getAll);
-    }
+
+        var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
+        for (let i = 0; i < storedСodearr.length; i++ ) {
+          if(storedСodearr[i] === getAll && getAll.length !== 0){
+
+            storedСodearr[i] = "";
+            localStorage.setItem("codearr", JSON.stringify(storedСodearr));
+            return;
+          }
+        }
+      }
+
+
 
     let codearritem = localStorage.getItem('codearr');
 
@@ -67,6 +83,20 @@ function getElement2(url, selector, c) {
         codearr[4] = "4826";
         localStorage.setItem("codearr", JSON.stringify(codearr));
 
+    }
+
+    if(getAll !== null || getAll !== ""){
+      localStorage.setItem('5paket_pin_1', getAll);
+
+      var storedСodearr = JSON.parse(localStorage.getItem("codearr"));
+      for (let i = 0; i < storedСodearr.length; i++ ) {
+        if(storedСodearr[i] === getAll && getAll.length !== 0){
+
+          storedСodearr[i] = "";
+          localStorage.setItem("codearr", JSON.stringify(storedСodearr));
+          return;
+        }
+      }
     }
 
     //localStorage.removeItem('name1_paket');

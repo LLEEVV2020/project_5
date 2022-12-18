@@ -1,33 +1,36 @@
-
 <div class="waitingfor menu1">
   <h2>Двигайся <br>
     к следующей <br> зелёной точке
-    </h2>
+  </h2>
   <p>Введи номер точки с экрана активации, <br>
     чтобы продолжить игру</p>
 
-<!--<img class="menu1-img" src="img/map1.png" alt="">-->
-<div class="map-new-wrapper">
-  <img class="menu1-img" src="img/map_new.png" alt="">
+  <!--<img class="menu1-img" src="img/map1.png" alt="">-->
+  <div class="map-new-wrapper">
+    <img class="menu1-img" src="img/map_new.png" alt="">
 
-  <div class="icon-new icon-new1" data-pin="0375"></div>
-  <div class="icon-new icon-new2" data-pin="4529"></div>
-  <div class="icon-new icon-new3" data-pin="4826"></div>
-  <div class="icon-new icon-new4" data-pin="8437"></div>
-  <div class="icon-new icon-new5" data-pin="9163"></div>
-</div>
+    <div class="icon-new icon-new1" data-pin="0375"></div>
+    <div class="icon-new icon-new2" data-pin="4529"></div>
+    <div class="icon-new icon-new3" data-pin="4826"></div>
+    <div class="icon-new icon-new4" data-pin="8437"></div>
+    <div class="icon-new icon-new5" data-pin="9163"></div>
+  </div>
 
 
   <!--<img class="menu1-img" src="img/svg/map1.svg" alt="">-->
 
   <div class="wrapper_cifri-input pincode">
 
-    <input type="number" class="cifri-input cifri-input1" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
-    <input type="number" class="cifri-input cifri-input2" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
-    <input type="number" class="cifri-input cifri-input3" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
-    <input type="number" class="cifri-input cifri-input4" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value=""   />
+    <input type="number" class="cifri-input cifri-input1" min="0" inputmode="numeric" pattern="[0-9]*"
+      title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value="" />
+    <input type="number" class="cifri-input cifri-input2" min="0" inputmode="numeric" pattern="[0-9]*"
+      title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value="" />
+    <input type="number" class="cifri-input cifri-input3" min="0" inputmode="numeric" pattern="[0-9]*"
+      title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value="" />
+    <input type="number" class="cifri-input cifri-input4" min="0" inputmode="numeric" pattern="[0-9]*"
+      title="Non-negative integral number" onKeyPress="if(this.value.length==1) return false;" maxlength="1" value="" />
     <input type="hidden" name="pincode" class="pincodes">
-<!--
+    <!--
       <input type="text" class="cifri-input"  maxlength="1" value="9"   />
     <input type="text" class="cifri-input"  maxlength="1" value="1"   />
     <input type="text" class="cifri-input" maxlength="1" value="6"   />
@@ -36,40 +39,40 @@
 
   </div>
 
-  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Начать игру</button>
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><img src="img/svg/icon-btn.svg" alt=""> Начать
+    игру</button>
 
 </div>
 
 <script>
 
-let paket5_pin_1 = localStorage.getItem('5paket_pin_1');
-if(paket5_pin_1 === null || paket5_pin_1 === "null"){
-  let cifri_input1 = document.querySelector('.icon-new1');
-  cifri_input1.classList.add("icon-new1-css");
+  let paket5_pin_1 = localStorage.getItem('5paket_pin_1');
+  if (paket5_pin_1 === null || paket5_pin_1 === "null") {
+    //let cifri_input1 = document.querySelector('.icon-new1');
+    //cifri_input1.classList.add("icon-new1-css");
 
-} else {
-  if(paket5_pin_1 === "0375"){
-    let cifri_input1 = document.querySelector('.icon-new1');
-    cifri_input1.classList.add("icon-new1-css");
+  } else {
+    if (paket5_pin_1 === "0375") {
+      let cifri_input1 = document.querySelector('.icon-new1');
+      cifri_input1.classList.add("icon-new1-css");
 
+    }
+    if (paket5_pin_1 === "4529") {
+      let cifri_input2 = document.querySelector('.icon-new2');
+      cifri_input2.classList.add("icon-new2-css");
+    }
+    if (paket5_pin_1 === "4826") {
+      let cifri_input3 = document.querySelector('.icon-new3');
+      cifri_input3.classList.add("icon-new3-css");
+    }
+    if (paket5_pin_1 === "8437") {
+      let cifri_input4 = document.querySelector('.icon-new4');
+      cifri_input4.classList.add("icon-new4-css");
+    }
+    if (paket5_pin_1 === "9163") {
+      let cifri_input5 = document.querySelector('.icon-new5');
+      cifri_input5.classList.add("icon-new5-css");
+    }
   }
-  if(paket5_pin_1 === "4529"){
-    let cifri_input2 =  document.querySelector('.icon-new2');
-    cifri_input2.classList.add("icon-new2-css");
-  }
-  if(paket5_pin_1 === "4826"){
-    let cifri_input3 =  document.querySelector('.icon-new3');
-    cifri_input3.classList.add("icon-new3-css");
-  }
-  if(paket5_pin_1 === "8437"){
-    let cifri_input4 = document.querySelector('.icon-new4');
-    cifri_input4.classList.add("icon-new4-css");
-  }
-  if(paket5_pin_1 === "9163"){
-    let cifri_input5 =  document.querySelector('.icon-new5');
-    cifri_input5.classList.add("icon-new5-css");
-  }
-}
 
 </script>
-
