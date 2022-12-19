@@ -79,7 +79,9 @@ https://base.x5quest.ru/api/RedirectToPage?promo=QK21509&str=asdfassfasdasdasdas
 https://base.x5quest.ru/api/QRGeneration?sringQR=https://base.x5quest.ru/api/RedirectToPage?promo=QK21509&str=asdfassfasdasdasdasfqxcaasdasfasfds
 
 */
-    let str_item = 'https://base.x5quest.ru/api/QRGeneration?sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
+   // let str_item = 'https://base.x5quest.ru/api/QRGeneration?sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
+ //let str_item = 'https://base.x5quest.ru/api/QRGeneration?sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
+ let str_item = 'https://base.x5quest.ru/api/QRGeneration?str=1525&sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
 
     getElement(str_item, 'body', function(element) {
       //console.log(element);
@@ -112,6 +114,29 @@ https://base.x5quest.ru/api/QRGeneration?sringQR=https://base.x5quest.ru/api/Red
   }
 
     VizovStart();
+
+    $(document).ready(function() {
+
+
+      localStorage.removeItem('x5paket-katok-qw-screen-surprise');
+      localStorage.setItem('x5paket-katok-qw-screen-surprise', "x5paket-katok-qw-screen-surprise");
+
+
+      $(".findout .btn").click(function(){
+
+        localStorage.removeItem('x5paket-katok-qw-run');
+      localStorage.setItem('x5paket-katok-qw-run', "x5paket-katok-qw-run");
+
+      });
+
+      $(".add-card .btn").click(function(){
+        localStorage.removeItem('x5paket-katok-qw-magic');
+      localStorage.setItem('x5paket-katok-qw-magic', "x5paket-katok-qw-magic");
+
+      });
+
+    });
+
 
     </script>
 
