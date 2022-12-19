@@ -1,5 +1,11 @@
 $('input').keydown(function(e){
-    $(this).val('');
+ /* if ( $(this).hasClass("cifri-input4") ){
+    var value = $(this).val();
+
+  }*/
+
+
+
 
     if (event.code == 'Backspace') {
 
@@ -11,10 +17,16 @@ $('input').keydown(function(e){
         $(".cifri-input2").focus();
       }
       if ( $(this).hasClass("cifri-input4") ) {
+        var value = $(this).val();
+        if(value !== ""){
+          return;
+        }
         $(".cifri-input3").focus();
       }
 
     }
+
+    $(this).val('');
 
   });
 

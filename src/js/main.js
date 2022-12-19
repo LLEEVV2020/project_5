@@ -44,8 +44,35 @@ function getElement2(url, selector, c) {
 
     let getAll = getAllUrlParams().pin; // '0000'
 
+
+    let codearritem = localStorage.getItem('codearr');
+
+    if (codearritem === "null"){
+        codearritem = null
+    }
+
+    if(codearritem === null){
+
+        var codearr = [];
+        codearr[0] = "4529";
+        codearr[1] = "9163";
+        codearr[2] = "8437";
+        codearr[3] = "0375";
+        codearr[4] = "4826";
+        localStorage.setItem("codearr", JSON.stringify(codearr));
+
+    }
+
+
     if(promocode_5paket === null){
-        getElement2('https://base.x5quest.ru/api/extradition?name=QKCDNJG', '', function(element) {
+
+      let sessis_5paket = localStorage.getItem('sessia_paket5');
+
+     // https://base.x5quest.ru/api/extradition?name=QKCDNJG
+
+     let url_ggg = "https://base.x5quest.ru/api/extradition?key=" + sessis_5paket;
+
+        getElement2(url_ggg, '', function(element) {
             //console.log(element);
             localStorage.setItem('promocode_5paket', JSON.stringify(element));
         });
@@ -67,23 +94,6 @@ function getElement2(url, selector, c) {
 
 
 
-    let codearritem = localStorage.getItem('codearr');
-
-    if (codearritem === "null"){
-        codearritem = null
-    }
-
-    if(codearritem === null){
-
-        var codearr = [];
-        codearr[0] = "4529";
-        codearr[1] = "9163";
-        codearr[2] = "8437";
-        codearr[3] = "0375";
-        codearr[4] = "4826";
-        localStorage.setItem("codearr", JSON.stringify(codearr));
-
-    }
 
     //localStorage.removeItem('name1_paket');
 
