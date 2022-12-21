@@ -46,7 +46,13 @@
 
 let promocodePaket = JSON.parse(localStorage.getItem('promocode_5paket'));
 var promo_code = document.querySelector('.promo-code span');
-          promo_code.innerHTML = promocodePaket;
+promo_code.innerHTML = promocodePaket;
+if(promocodePaket === "exeption"){
+  promo_code.innerHTML = "ОШИБКА";
+  var promo_code_oshibka = document.querySelector('.promo-code-oshibka');
+  promo_code_oshibka.innerHTML = "У вас проблема с сетью, <br> обновите страницу";
+  localStorage.removeItem('promocode_5paket');
+}
 
     var btn_link_code = document.querySelector('.btn-link-code');
 
