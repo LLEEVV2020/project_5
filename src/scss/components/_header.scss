@@ -414,6 +414,26 @@ footer{
     margin-bottom: 20px;
   }
 }
+.footer-bottom2{
+  position: relative;
+  & > *{
+    position: relative;
+  }
+
+}
+.container-bottom2{
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url(../img/footer-bg.png);
+    background-size: cover;
+    width: 100%;
+    height: 50px;
+  }
+}
+
 .surprise2{
   margin-bottom: 20px;
   margin-top: 5px;
