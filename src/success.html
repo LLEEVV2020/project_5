@@ -15,6 +15,14 @@
 <body class="page__body">
   <div class="site-container">
 
+    <script>
+
+      //
+      let xatok_qw_screen_10 = localStorage.getItem('x5paket_katok_qw_screen_10');
+      if(xatok_qw_screen_10 !== "x5paket_katok_qw_screen_10"){
+        window.location.href = '/';
+      }
+    </script>
 
     @include('partials/header.html')
 
@@ -120,6 +128,7 @@ https://base.x5quest.ru/api/QRGeneration?sringQR=https://base.x5quest.ru/api/Red
 
       localStorage.removeItem('x5paket-katok-qw-screen-surprise');
       localStorage.setItem('x5paket-katok-qw-screen-surprise', "x5paket-katok-qw-screen-surprise");
+
 
 
       $(".findout .btn").click(function(){
