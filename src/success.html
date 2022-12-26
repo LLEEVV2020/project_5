@@ -70,15 +70,18 @@ function getElement(url, selector, c) {
     let promocode_5paket = localStorage.getItem('promocode_5paket');
 
 
-    let link_parse = "https://base.x5quest.ru/api/RedirectToPage?promo=";
+    let link_parse = "";
 
-    let jsob_parse = "";
+      //let jsob_parse = JSON.parse(promocode_5paket);
 
-    let referrer_url = document.referrer;
-    let x5paket_ru = "x5paket.ru";
-    if(referrer_url.includes(x5paket_ru)){
-      jsob_parse = JSON.parse(promocode_5paket);
-    }
+      let jsob_parse = "";
+
+      let referrer_url = document.referrer;
+      let x5paket_ru = "x5paket.ru";
+      if(referrer_url.includes(x5paket_ru)){
+        jsob_parse = JSON.parse(promocode_5paket);
+        link_parse =  "https://base.x5quest.ru/api/RedirectToPage?promo=";
+      }
 
     var abc = "abcdefghijklmnopqrstuvwxyz";
         var rs = "";
