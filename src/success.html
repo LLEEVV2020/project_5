@@ -98,7 +98,12 @@ https://base.x5quest.ru/api/QRGeneration?sringQR=https://base.x5quest.ru/api/Red
 */
    // let str_item = 'https://base.x5quest.ru/api/QRGeneration?sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
  //let str_item = 'https://base.x5quest.ru/api/QRGeneration?sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
- let str_item = 'https://base.x5quest.ru/api/QRGeneration?str=1525&sringQR=' + link_parse + jsob_parse + '&str=' + rs ;
+
+ let flag_sessia_paket455 = localStorage.getItem('sessia_paket5');
+ let new_ssilka5 = 'https://base.x5quest.ru/api/QRGeneration?str=';
+ flag_sessia_paket455 = flag_sessia_paket5 + '&sringQR=';
+
+ let str_item = new_ssilka5 + flag_sessia_paket455 + link_parse + jsob_parse + '&str=' + rs ;
 
     getElement(str_item, 'body', function(element) {
       //console.log(element);
