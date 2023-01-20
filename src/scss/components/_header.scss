@@ -139,6 +139,12 @@ p{
       font-weight: 700;
     }
   }
+  .gift-wrapper--big{
+    img{
+      height: 125px;
+    }
+  }
+
   .promo-code{
     width: 295px;
     height: 56px;
@@ -454,12 +460,28 @@ footer{
     margin-bottom: 18px;
     }
   .gift-wrapper {
-    margin-bottom: 0;
+   /* margin-bottom: 0;*/
+   margin-bottom: 12px;
     & +  .gift-wrapper{
-      margin-bottom: 10px;
+      margin-bottom: 24px;
     }
     p{
       font-weight: 500;
+    }
+  }
+
+  .gift-wrapper--content{
+    text-align: left;
+    p{
+      margin-bottom: 10px;
+    }
+    ul{
+      padding-left: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      li + li{
+        margin-top: 7px;
+      }
     }
   }
 
